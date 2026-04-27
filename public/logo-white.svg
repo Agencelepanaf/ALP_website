@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Le Panaf">
+  <!-- Version fond sombre -->
+  <g>
+    <path d="M20 8 L32 24 L20 40 L8 24 Z" fill="#E8896C"/>
+    <path d="M32 8 L44 24 L32 40 L20 24 Z" fill="#5A8A76"/>
+    <path d="M20 24 L32 8 L44 24 L32 40 Z" fill="#FAFAF7" opacity="0.12"/>
+  </g>
+  <text x="54" y="20" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="400" letter-spacing="0.12em" fill="#A0A09C">LE</text>
+  <text x="54" y="38" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" letter-spacing="0.04em" fill="#FAFAF7">PANAF</text>
+</svg>
