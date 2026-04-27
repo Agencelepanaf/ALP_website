@@ -199,13 +199,13 @@ export default function HomePage() {
       </section>
 
       {/* ── NOS SERVICES ── */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <p className="text-xs font-semibold tracking-widest uppercase text-foreground-muted mb-2">
               Ce que nous faisons
             </p>
-            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-10">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
               Deux façons de travailler ensemble
             </h2>
           </RevealOnScroll>
@@ -239,14 +239,14 @@ export default function HomePage() {
       </section>
 
       {/* ── DOUBLE REGARD ── */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20 bg-dark overflow-hidden relative">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14 bg-dark overflow-hidden relative">
         <div className="absolute inset-0 bg-accent-green/5 pointer-events-none" />
         <div className="max-w-6xl mx-auto relative">
           <RevealOnScroll>
             <p className="text-xs font-semibold tracking-widest uppercase text-dark-muted mb-2">
               Notre différence
             </p>
-            <h2 className="font-display text-3xl md:text-4xl text-white mb-10 max-w-2xl">
+            <h2 className="font-display text-3xl md:text-4xl text-white mb-6 max-w-2xl">
               Pourquoi notre double regard change tout
             </h2>
           </RevealOnScroll>
@@ -278,13 +278,13 @@ export default function HomePage() {
       </section>
 
       {/* ── MÉTHODE ── */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20 bg-surface">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14 bg-surface">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <p className="text-xs font-semibold tracking-widest uppercase text-foreground-muted mb-2">
               Comment nous travaillons
             </p>
-            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-10">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
               Une méthode en 6 étapes
             </h2>
           </RevealOnScroll>
@@ -309,7 +309,7 @@ export default function HomePage() {
       </section>
    
       {/* ── CTA FINAL ── */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <div className="bg-dark rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">
