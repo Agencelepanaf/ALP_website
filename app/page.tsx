@@ -196,6 +196,17 @@ export default function HomePage() {
           </RevealOnScroll>
         </div>
 
+        {/* Bouton bas de hero — mobile uniquement, statique */}
+        <div className="mt-auto pt-8 flex justify-center md:hidden">
+          <Link
+            href="/contact"
+            className="flex items-center gap-2 text-sm font-semibold bg-dark text-white shadow-2xl shadow-dark/30 px-6 py-3.5 rounded-full"
+          >
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            Discuter du projet
+          </Link>
+        </div>
+
       </section>
 
       {/* ── NOS SERVICES ── */}
