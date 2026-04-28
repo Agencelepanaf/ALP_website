@@ -5,13 +5,13 @@ import RevealOnScroll from "@/components/ui/RevealOnScroll";
 export const metadata: Metadata = {
   title: "Création de site web — Livrable clé en main",
   description:
-    "L'Agence Le Panaf conçoit et développe votre site web en Next.js : audit, design, développement, SEO, formation. Livraison en 4 à 8 semaines.",
+    "L'Agence Le Panaf conçoit et développe votre site web : audit, design, développement, SEO, formation. Livraison en 4 à 8 semaines.",
 };
 
 const inclus = [
   { num: "01", titre: "Audit stratégique", desc: "Analyse marché, concurrents, cibles. La stratégie précède toujours le design." },
   { num: "02", titre: "Conception UX/UI", desc: "Maquettes haute fidélité. Chaque décision de design a une raison fonctionnelle." },
-  { num: "03", titre: "Développement Next.js", desc: "Lighthouse 90+, code propre, chargement rapide." },
+  { num: "03", titre: "Développement sur mesure", desc: "Site ultra-rapide, optimisé SEO, score PageSpeed +90." },
   { num: "04", titre: "SEO de base", desc: "Métadonnées, structure sémantique, sitemap — les fondations." },
   { num: "05", titre: "Formation", desc: "Vous êtes autonome pour les mises à jour courantes dès la livraison." },
   { num: "06", titre: "Suivi 30 jours", desc: "Un mois de support inclus après le lancement." },
@@ -30,7 +30,7 @@ const faq = [
   { q: "Quel délai moyen ?", r: "Entre 4 et 8 semaines selon la taille. Un site vitrine de 5 pages : 4 semaines. Un projet complexe : 8 semaines ou plus." },
   { q: "Qui rédige les textes ?", r: "Nous pouvons tout rédiger. Si vous fournissez vos textes, nous les révisons et optimisons pour le web." },
   { q: "Que se passe-t-il après les 30 jours ?", r: "Vous êtes autonome. Si vous souhaitez un suivi, notre service de présence digitale prend le relais." },
-  { q: "Le site sera rapide sur mobile ?", r: "Non-négociable. Nous ciblons Lighthouse 90+ sur mobile. Next.js offre des performances nativement supérieures." },
+  { q: "Le site sera rapide sur mobile ?", r: "Non-négociable. Nous ciblons un score PageSpeed +90 sur mobile — performance et SEO garantis dès le lancement." },
   { q: "Puis-je modifier le site moi-même ?", r: "Oui. La formation est incluse. Selon les besoins, nous configurons aussi un CMS simple." },
   { q: "Proposez-vous l'hébergement ?", r: "Nous déployons sur Vercel (offre gratuite pour la majorité des PME). Pour des besoins spécifiques, on configure la meilleure solution." },
 ];
@@ -40,7 +40,7 @@ const jsonLd = {
   "@type": "Service",
   name: "Création de site web",
   provider: { "@type": "Organization", name: "Le Panaf", url: "https://lepanaf.com" },
-  description: "Sites web sur mesure en Next.js pour PME marocaines et africaines.",
+  description: "Sites web sur mesure pour PME marocaines et africaines.",
   areaServed: ["MA", "DZ", "TN", "SN", "CI"],
   serviceType: "Web Development",
 };
@@ -73,8 +73,8 @@ export default function CreationSiteWebPage() {
             <div className="flex flex-wrap gap-3">
               {[
                 { val: "4–8 sem.", label: "Délai" },
-                { val: "Next.js", label: "Technologie" },
-                { val: "Lighthouse 90+", label: "Performance" },
+                { val: "PageSpeed +90", label: "Performance" },
+                { val: "SEO inclus", label: "Référencement" },
               ].map((s) => (
                 <div key={s.val} className="rounded-2xl px-5 py-3 border border-border bg-surface">
                   <p className="text-sm font-semibold text-foreground">{s.val}</p>

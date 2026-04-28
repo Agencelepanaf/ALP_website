@@ -43,7 +43,7 @@ const services = [
   {
     tag: "Projet ponctuel",
     titre: "Création de site web",
-    description: "Audit, design, développement Next.js, SEO, formation. Livré clé en main en 4 à 8 semaines.",
+    description: "Audit, design, développement sur mesure, SEO, formation. Livré clé en main en 4 à 8 semaines.",
     href: "/services/creation-site-web",
     color: "bg-surface",
     textColor: "text-foreground",
