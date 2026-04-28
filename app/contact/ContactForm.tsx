@@ -51,7 +51,7 @@ export default function ContactForm() {
       setForm(initial);
     } catch {
       setStatus("error");
-      setErrorMsg("Une erreur s'est produite. Contactez-nous directement à edhem@agencelepanaf.ma.");
+      setErrorMsg("Une erreur s'est produite. Contactez-nous directement à edhem@agencelepanaf.com.");
     }
   }
 

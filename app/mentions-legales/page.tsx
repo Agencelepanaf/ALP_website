@@ -17,7 +17,7 @@ export default function MentionsLegalesPage() {
         <p className="text-sm text-gray-muted leading-relaxed">
           Agence Le Panaf<br />
           Casablanca, Maroc<br />
-          Email : edhem@agencelepanaf.ma
+          Email : edhem@agencelepanaf.com
         </p>
 
         <h2 className="text-base font-semibold mt-8 mb-3">Hébergement</h2>
@@ -36,7 +36,7 @@ export default function MentionsLegalesPage() {
         <p className="text-sm text-gray-muted leading-relaxed">
           Les informations transmises via le formulaire de contact sont utilisées uniquement
           pour répondre à votre demande. Elles ne sont ni vendues ni transmises à des tiers.
-          Pour toute demande relative à vos données, contactez-nous à edhem@agencelepanaf.ma.
+          Pour toute demande relative à vos données, contactez-nous à edhem@agencelepanaf.com.
         </p>
 
         <h2 className="text-base font-semibold mt-8 mb-3">Cookies</h2>
