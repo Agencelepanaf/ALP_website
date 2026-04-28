@@ -115,7 +115,7 @@ const jsonLd = {
 
 export default function PresenceDigitalePage() {
   return (
-    <div className="pb-20 md:pb-0">
+    <div className="">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* HERO */}

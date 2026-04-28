@@ -102,7 +102,7 @@ const avantages = [
 
 export default function HomePage() {
   return (
-    <div className="pb-20 md:pb-0">
+    <div className="">
 
       {/* ── HERO ── fond clair, typo éditoriale Gemeos */}
       <section className="relative min-h-screen bg-background flex flex-col px-4 sm:px-6 lg:px-8 pt-20 md:pt-[90px] pb-16 overflow-hidden">
