@@ -71,7 +71,7 @@ export default function RootLayout({
               logo: "https://lepanaf.com/logo.svg",
               contactPoint: {
                 "@type": "ContactPoint",
-                email: "contact@agencelepanaf.com",
+                email: "edhem@agencelepanaf.ma",
                 contactType: "customer service",
                 availableLanguage: ["French", "Arabic"],
               },

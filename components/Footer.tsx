@@ -59,10 +59,10 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               <li>
                 <a
-                  href="mailto:contact@agencelepanaf.com"
+                  href="mailto:edhem@agencelepanaf.ma"
                   className="text-sm text-dark-muted hover:text-white transition-colors duration-200"
                 >
-                  contact@agencelepanaf.com
+                  edhem@agencelepanaf.ma
                 </a>
               </li>
               <li className="text-sm text-dark-muted">Casablanca, Maroc</li>
