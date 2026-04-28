@@ -5,7 +5,7 @@ import ContactForm from "./ContactForm";
 export const metadata: Metadata = {
   title: "Contact — Parlons de votre projet",
   description:
-    "Décrivez votre projet à Le Panaf. Réponse sous 24h ouvrées. Pas de devis automatique, pas de relance commerciale agressive.",
+    "Décrivez votre projet à Le Panaf. Réponse sous 24h. Pas de devis automatique, pas de relance commerciale agressive.",
 };
 
 export default function ContactPage() {
@@ -27,7 +27,7 @@ export default function ContactPage() {
               <span className="block text-4xl md:text-5xl lg:text-6xl italic text-accent">votre projet</span>
             </h1>
             <p className="text-sm text-foreground-muted max-w-md leading-relaxed">
-              Pas de devis automatique, pas de relance agressive. Une réponse honnête sous 24h ouvrées.
+              Pas de devis automatique, pas de relance agressive. Une réponse honnête sous 24h.
             </p>
           </RevealOnScroll>
         </div>
@@ -53,6 +53,12 @@ export default function ContactPage() {
                   <p className="text-xs font-semibold tracking-widest uppercase text-foreground-muted mb-5">Coordonnées</p>
                   <ul className="space-y-4">
                     <li>
+                      <p className="text-xs text-foreground-muted mb-0.5">Nous contacter</p>
+                      <a href="tel:+212638725690" className="text-sm font-medium hover:text-accent transition-colors duration-200">
+                        (+212) 06.38.72.56.90
+                      </a>
+                    </li>
+                    <li>
                       <p className="text-xs text-foreground-muted mb-0.5">Email</p>
                       <a href="mailto:edhem@agencelepanaf.com" className="text-sm font-medium hover:text-accent transition-colors duration-200">
                         edhem@agencelepanaf.com
@@ -64,7 +70,7 @@ export default function ContactPage() {
                     </li>
                     <li>
                       <p className="text-xs text-foreground-muted mb-0.5">Délai de réponse</p>
-                      <p className="text-sm font-medium">Sous 24h ouvrées</p>
+                      <p className="text-sm font-medium">Sous 24h</p>
                     </li>
                   </ul>
                 </div>

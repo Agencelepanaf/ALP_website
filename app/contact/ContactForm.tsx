@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button";
 interface FormState {
   nom: string;
   email: string;
+  tel: string;
   entreprise: string;
   typeProjet: string;
   budget: string;
@@ -15,6 +16,7 @@ interface FormState {
 const initial: FormState = {
   nom: "",
   email: "",
+  tel: "",
   entreprise: "",
   typeProjet: "",
   budget: "",
@@ -61,7 +63,7 @@ export default function ContactForm() {
         <p className="text-4xl mb-4">✓</p>
         <p className="font-display text-2xl text-foreground mb-2">Message reçu.</p>
         <p className="text-sm text-foreground-muted">
-          Nous vous répondons sous 24h ouvrées. Merci de votre confiance.
+          Nous vous répondons sous 24h. Merci de votre confiance.
         </p>
       </div>
     );
@@ -84,9 +86,17 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-1.5">
-        <label htmlFor="entreprise" className="text-xs font-semibold text-foreground-muted tracking-wide">Entreprise</label>
-        <input id="entreprise" name="entreprise" type="text" value={form.entreprise} onChange={handleChange} placeholder="Nom de votre entreprise" className={inputBase} />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="tel" className="text-xs font-semibold text-foreground-muted tracking-wide">
+            Téléphone <span className="text-accent">*</span>
+          </label>
+          <input id="tel" name="tel" type="tel" required value={form.tel} onChange={handleChange} placeholder="+212 06 00 00 00 00" className={inputBase} />
+        </div>
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="entreprise" className="text-xs font-semibold text-foreground-muted tracking-wide">Entreprise</label>
+          <input id="entreprise" name="entreprise" type="text" value={form.entreprise} onChange={handleChange} placeholder="Nom de votre entreprise" className={inputBase} />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

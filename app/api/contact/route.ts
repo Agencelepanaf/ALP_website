@@ -22,6 +22,7 @@ function isRateLimited(ip: string): boolean {
 interface ContactPayload {
   nom: string;
   email: string;
+  tel: string;
   entreprise?: string;
   typeProjet?: string;
   budget?: string;
@@ -35,6 +36,7 @@ function validate(data: unknown): data is ContactPayload {
     typeof d.nom === "string" && d.nom.trim().length > 0 &&
     typeof d.email === "string" &&
     /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(d.email) &&
+    typeof d.tel === "string" && d.tel.trim().length > 0 &&
     typeof d.description === "string" && d.description.trim().length > 0
   );
 }
@@ -44,6 +46,7 @@ function buildEmailHtml(p: ContactPayload): string {
   const rows: [string, string][] = [
     ["Nom", p.nom],
     ["Email", p.email],
+    ["Téléphone", p.tel],
     ["Entreprise", p.entreprise || "—"],
     ["Type de projet", p.typeProjet || "—"],
     ["Budget", p.budget || "—"],
