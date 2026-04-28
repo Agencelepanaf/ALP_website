@@ -112,7 +112,7 @@ export async function POST(req: NextRequest) {
   const resend = new Resend(apiKey);
 
   const { error } = await resend.emails.send({
-    from: "Le Panaf <noreply@lepanaf.com>",
+    from: "Agence Le Panaf <noreply@agencelepanaf.com>",
     to: [toEmail],
     replyTo: body.email,
     subject: `Nouvelle demande — ${body.nom}${body.entreprise ? ` (${body.entreprise})` : ""}`,
