@@ -13,7 +13,7 @@ export default function ContactPage() {
     <div className="pb-20 md:pb-0">
 
       {/* HERO */}
-      <section className="bg-background px-4 sm:px-6 lg:px-8 pt-[90px] pb-14 border-b border-border">
+      <section className="bg-background px-4 sm:px-6 lg:px-8 pt-20 md:pt-[90px] pb-14 border-b border-border">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <div className="flex items-center gap-3 mb-8">

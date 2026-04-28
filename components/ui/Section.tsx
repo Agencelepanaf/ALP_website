@@ -16,7 +16,7 @@ export default function Section({
   contained = true,
 }: SectionProps) {
   return (
-    <Tag id={id} className={`px-4 sm:px-6 lg:px-8 py-16 md:py-24 ${className}`}>
+    <Tag id={id} className={`px-4 sm:px-6 lg:px-8 py-10 md:py-24 ${className}`}>
       {contained ? (
         <div className="max-w-6xl mx-auto">{children}</div>
       ) : (
