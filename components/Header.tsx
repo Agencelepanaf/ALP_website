@@ -30,7 +30,7 @@ export default function Header() {
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-18">
+          <div className="flex items-center justify-between h-20 md:h-18">
 
             {/* Logo */}
             <Link href="/" className="flex-shrink-0" aria-label="Agence Le Panaf — accueil">
@@ -40,7 +40,7 @@ export default function Header() {
                 width={360}
                 height={96}
                 priority
-                className="h-10 md:h-14 w-auto"
+                className="h-14 w-auto"
               />
             </Link>
 
