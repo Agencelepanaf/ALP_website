@@ -43,7 +43,7 @@ export default function PolitiqueConfidentialitePage() {
         <h2 className="text-base font-semibold mt-8 mb-3">Vos droits</h2>
         <p className="text-sm text-gray-muted leading-relaxed">
           Vous disposez d'un droit d'accès, de rectification et de suppression de vos données
-          personnelles. Pour exercer ces droits, contactez-nous à edhem@agencelepanaf.com. Nous
+          personnelles. Pour exercer ces droits, contactez-nous à contact@agencelepanaf.com. Nous
           répondons sous 72h ouvrées.
         </p>
 
@@ -62,10 +62,10 @@ export default function PolitiqueConfidentialitePage() {
         <p className="text-sm text-gray-muted leading-relaxed">
           Pour toute question relative à cette politique :{" "}
           <a
-            href="mailto:edhem@agencelepanaf.com"
+            href="mailto:contact@agencelepanaf.com"
             className="text-foreground hover:text-accent-terra transition-colors duration-200"
           >
-            edhem@agencelepanaf.com
+            contact@agencelepanaf.com
           </a>
         </p>
 

@@ -60,8 +60,8 @@ export default function ContactPage() {
                     </li>
                     <li>
                       <p className="text-xs text-foreground-muted mb-0.5">Email</p>
-                      <a href="mailto:edhem@agencelepanaf.com" className="text-sm font-medium hover:text-accent transition-colors duration-200">
-                        edhem@agencelepanaf.com
+                      <a href="mailto:contact@agencelepanaf.com" className="text-sm font-medium hover:text-accent transition-colors duration-200">
+                        contact@agencelepanaf.com
                       </a>
                     </li>
                     <li>

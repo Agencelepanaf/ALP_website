@@ -53,7 +53,7 @@ export default function ContactForm() {
       setForm(initial);
     } catch {
       setStatus("error");
-      setErrorMsg("Une erreur s'est produite. Contactez-nous directement à edhem@agencelepanaf.com.");
+      setErrorMsg("Une erreur s'est produite. Contactez-nous directement à contact@agencelepanaf.com.");
     }
   }
 
