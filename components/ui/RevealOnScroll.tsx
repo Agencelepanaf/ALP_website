@@ -17,7 +17,7 @@ export default function RevealOnScroll({
   direction = "up",
 }: RevealOnScrollProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
 
   const initial = {
     opacity: 0,
