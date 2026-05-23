@@ -49,7 +49,7 @@ export default function HomePage() {
     <div className="">
 
       {/* ── HERO ── fond clair, typo éditoriale Gemeos */}
-      <section className="relative min-h-screen bg-background flex flex-col px-6 sm:px-8 lg:px-12 pt-20 md:pt-22.5 pb-16 overflow-hidden">
+      <section className="relative min-h-dvh bg-background flex flex-col px-6 sm:px-8 lg:px-12 pt-20 md:pt-22.5 pb-16 overflow-hidden">
 
         {/* Trait décoratif horizontal discret */}
         <div className="absolute top-0 left-0 right-0 h-px bg-border pointer-events-none" />
