@@ -107,28 +107,28 @@ export default function HomePage() {
             </h1>
           </RevealOnScroll>
 
+          {/* Pills checkmark */}
+          <RevealOnScroll delay={0.08}>
+            <div className="flex gap-1 sm:gap-1.5 justify-center">
+              {["Présence digitale", "Stratégie", "Contenu", "SEO"].map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-flex items-center gap-1 bg-accent-green/10 text-accent-green text-[10px] sm:text-xs font-medium px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-accent-green/20 whitespace-nowrap"
+                  style={{ boxShadow: "0 2px 6px 0 rgba(45,74,62,0.13)" }}
+                >
+                  <svg width="11" height="11" viewBox="0 0 13 13" fill="none" aria-hidden>
+                    <rect width="13" height="13" rx="3" fill="#2D4A3E"/>
+                    <path d="M3 6.5L5.5 9L10 4" stroke="#FAFAF7" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </RevealOnScroll>
+
           {/* CTA */}
           <div className="mt-auto sm:mt-0 w-full">
-          <RevealOnScroll delay={0.1}>
-            <div className="flex flex-col gap-4 sm:gap-6">
-              {/* Pills checkmark */}
-              <div className="flex gap-1 sm:gap-1.5 justify-center">
-                {["Présence digitale", "Stratégie", "Contenu", "SEO"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="inline-flex items-center gap-1 bg-accent-green/10 text-accent-green text-[10px] sm:text-xs font-medium px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-accent-green/20 whitespace-nowrap"
-                    style={{ boxShadow: "0 2px 6px 0 rgba(45,74,62,0.13)" }}
-                  >
-                    <svg width="11" height="11" viewBox="0 0 13 13" fill="none" aria-hidden>
-                      <rect width="13" height="13" rx="3" fill="#2D4A3E"/>
-                      <path d="M3 6.5L5.5 9L10 4" stroke="#FAFAF7" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              {/* CTA */}
+            <RevealOnScroll delay={0.1}>
               <div className="flex flex-wrap gap-3 justify-center">
                 <Button href="/contact" variant="primary" className="text-sm px-7 py-3.5">
                   Démarrer →
@@ -137,8 +137,7 @@ export default function HomePage() {
                   Notre méthode
                 </Button>
               </div>
-            </div>
-          </RevealOnScroll>
+            </RevealOnScroll>
           </div>
         </div>
 
