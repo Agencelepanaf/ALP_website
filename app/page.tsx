@@ -108,6 +108,7 @@ export default function HomePage() {
           </RevealOnScroll>
 
           {/* Tags services + CTA */}
+          <div className="mt-auto sm:mt-0 w-full">
           <RevealOnScroll delay={0.1}>
             <div className="flex flex-col gap-4 sm:gap-6">
               {/* Pills checkmark */}
@@ -138,6 +139,7 @@ export default function HomePage() {
               </div>
             </div>
           </RevealOnScroll>
+          </div>
         </div>
 
         {/* Bouton bas de hero — mobile uniquement, statique */}
