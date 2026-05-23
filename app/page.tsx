@@ -11,24 +11,6 @@ export const metadata: Metadata = {
     "Le Panaf accompagne les PME au Maroc et en Afrique francophone dans la construction d'une présence en ligne qui attire, convainc et convertit.",
 };
 
-const cibles = [
-  {
-    icon: "🏢",
-    titre: "PME marocaines",
-    description: "Votre présence en ligne ne reflète pas encore ce que vous valez. Nous changeons cela.",
-  },
-  {
-    icon: "🌍",
-    titre: "Entrepreneurs africains",
-    description: "Au Maroc, en Afrique de l'Ouest ou depuis l'Europe — nous connaissons ce terrain.",
-  },
-  {
-    icon: "🇪🇺",
-    titre: "Entreprises européennes",
-    description: "Vous ciblez l'Afrique francophone. Vous avez besoin d'un ancrage local crédible.",
-  },
-];
-
 const services = [
   {
     tag: "Accompagnement continu",
@@ -61,56 +43,18 @@ const etapesMethode = [
   { num: "06", titre: "Lancement" },
 ];
 
-const casIllustratifs = [
-  {
-    secteur: "Restaurant africain",
-    ville: "Casablanca",
-    probleme: "Invisible en ligne auprès des expatriés et touristes.",
-    strategie: "Site bilingue + Google Business + contenu authentique.",
-  },
-  {
-    secteur: "Cabinet comptable",
-    ville: "Maroc",
-    probleme: "Site vieillissant, pas de contenu éducatif pour rassurer.",
-    strategie: "Refonte conversion + blog d'autorité sectoriel.",
-  },
-  {
-    secteur: "Fournisseur médical B2B",
-    ville: "Maghreb",
-    probleme: "Site en anglais, aucune présence SEO en français.",
-    strategie: "Site français B2B + catalogue + tunnel de devis.",
-  },
-];
-
-const avantages = [
-  {
-    num: "01",
-    titre: "Accès direct au fondateur",
-    description: "Chaque projet suivi personnellement. Pas d'intermédiaire.",
-  },
-  {
-    num: "02",
-    titre: "Tarifs de lancement",
-    description: "Les premiers clients bénéficient de conditions avantageuses.",
-  },
-  {
-    num: "03",
-    titre: "Partenariat long terme",
-    description: "Vous construisez l'agence avec nous. Vos retours comptent.",
-  },
-];
 
 export default function HomePage() {
   return (
     <div className="">
 
       {/* ── HERO ── fond clair, typo éditoriale Gemeos */}
-      <section className="relative min-h-screen bg-background flex flex-col px-6 sm:px-8 lg:px-12 pt-20 md:pt-[90px] pb-16 overflow-hidden">
+      <section className="relative min-h-screen bg-background flex flex-col px-6 sm:px-8 lg:px-12 pt-20 md:pt-22.5 pb-16 overflow-hidden">
 
         {/* Trait décoratif horizontal discret */}
         <div className="absolute top-0 left-0 right-0 h-px bg-border pointer-events-none" />
 
-        <div className="max-w-6xl mx-auto w-full flex flex-col justify-center flex-1 items-center text-center">
+        <div className="max-w-6xl mx-auto w-full flex flex-col justify-start sm:justify-center flex-1 items-center text-center pt-6 sm:pt-0">
 
           {/* Label avec icône animée */}
           <RevealOnScroll>
@@ -131,7 +75,7 @@ export default function HomePage() {
             <h1 className="font-display font-light leading-[1.1] tracking-tight mb-5 sm:mb-10">
               {/* Ligne 1 : fixe */}
               <span className="block text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground font-lucky font-light">
-                On crée des sites web pour
+                On crée des sites web
               </span>
 
               {/* Ligne 2 : mot cyclique (cible) */}
@@ -140,7 +84,7 @@ export default function HomePage() {
                 style={{ fontFamily: "'Bangers', sans-serif", letterSpacing: "0.05em", textShadow: "2px 2px 0px rgba(0,0,0,0.15)" }}
               >
                 <CyclingWord
-                  words={["les entreprises", "les hotels", "les STARTUPS", "les restaurants"]}
+                  words={["pour les entreprises", "pour les hotels", " pour les STARTUPS", "pour les restaurants"]}
                   interval={2400}
                 />
               </span>
@@ -167,11 +111,11 @@ export default function HomePage() {
           <RevealOnScroll delay={0.1}>
             <div className="flex flex-col gap-4 sm:gap-6">
               {/* Pills checkmark */}
-              <div className="flex gap-1.5">
+              <div className="flex gap-1 sm:gap-1.5 justify-center">
                 {["Présence digitale", "Stratégie", "Contenu", "SEO"].map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex items-center gap-1 bg-accent-green/10 text-accent-green text-xs font-medium px-2.5 py-1 rounded-full border border-accent-green/20 whitespace-nowrap"
+                    className="inline-flex items-center gap-1 bg-accent-green/10 text-accent-green text-[10px] sm:text-xs font-medium px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-accent-green/20 whitespace-nowrap"
                     style={{ boxShadow: "0 2px 6px 0 rgba(45,74,62,0.13)" }}
                   >
                     <svg width="11" height="11" viewBox="0 0 13 13" fill="none" aria-hidden>
