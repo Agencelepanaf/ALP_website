@@ -105,7 +105,7 @@ export default function HomePage() {
     <div className="">
 
       {/* ── HERO ── fond clair, typo éditoriale Gemeos */}
-      <section className="relative min-h-screen bg-background flex flex-col px-4 sm:px-6 lg:px-8 pt-20 md:pt-[90px] pb-16 overflow-hidden">
+      <section className="relative min-h-screen bg-background flex flex-col px-6 sm:px-8 lg:px-12 pt-20 md:pt-[90px] pb-16 overflow-hidden">
 
         {/* Trait décoratif horizontal discret */}
         <div className="absolute top-0 left-0 right-0 h-px bg-border pointer-events-none" />
@@ -114,13 +114,13 @@ export default function HomePage() {
 
           {/* Label avec icône animée */}
           <RevealOnScroll>
-            <div className="flex items-center gap-3 mb-10">
+            <div className="flex items-center gap-3 mb-5 sm:mb-10">
               <AnimatedIcon
                 src="/icon-slogan.png"
                 alt="Icône Le Panaf"
                 size={36}
               />
-              <p className="text-xs font-medium tracking-[0.2em] uppercase text-foreground-muted">
+              <p className="text-xs font-medium tracking-[0.2em] uppercase text-foreground-muted whitespace-nowrap">
                 Votre visibilité, notre engagement
               </p>
             </div>
@@ -128,9 +128,9 @@ export default function HomePage() {
 
           {/* H1 avec mots cycliques */}
           <RevealOnScroll delay={0.04}>
-            <h1 className="font-display font-light leading-[1.1] tracking-tight mb-10">
+            <h1 className="font-display font-light leading-[1.1] tracking-tight mb-5 sm:mb-10">
               {/* Ligne 1 : fixe */}
-              <span className="block text-[5.5vw] sm:text-5xl md:text-6xl lg:text-7xl text-foreground font-lucky font-light">
+              <span className="block text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground font-lucky font-light">
                 On crée des sites web pour
               </span>
 
@@ -165,7 +165,7 @@ export default function HomePage() {
 
           {/* Tags services + CTA */}
           <RevealOnScroll delay={0.1}>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4 sm:gap-6">
               {/* Pills checkmark */}
               <div className="flex gap-1.5">
                 {["Présence digitale", "Stratégie", "Contenu", "SEO"].map((tag) => (
@@ -184,7 +184,7 @@ export default function HomePage() {
               </div>
 
               {/* CTA */}
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 justify-center">
                 <Button href="/contact" variant="primary" className="text-sm px-7 py-3.5">
                   Démarrer →
                 </Button>
