@@ -5,6 +5,7 @@ import CookieBanner from "@/components/CookieBanner";
 import AnalyticsProvider from "@/components/AnalyticsProvider";
 import "./globals.css";
 import "@fontsource/bangers";
+import "@fontsource/luckiest-guy";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lepanaf.com"),

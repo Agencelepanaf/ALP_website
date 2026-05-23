@@ -110,7 +110,7 @@ export default function HomePage() {
         {/* Trait décoratif horizontal discret */}
         <div className="absolute top-0 left-0 right-0 h-px bg-border pointer-events-none" />
 
-        <div className="max-w-6xl mx-auto w-full flex flex-col justify-center flex-1">
+        <div className="max-w-6xl mx-auto w-full flex flex-col justify-center flex-1 items-center text-center">
 
           {/* Label avec icône animée */}
           <RevealOnScroll>
@@ -130,7 +130,7 @@ export default function HomePage() {
           <RevealOnScroll delay={0.04}>
             <h1 className="font-display font-light leading-[1.1] tracking-tight mb-10">
               {/* Ligne 1 : fixe */}
-              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground">
+              <span className="block text-[5.5vw] sm:text-5xl md:text-6xl lg:text-7xl text-foreground font-lucky font-light">
                 On crée des sites web pour
               </span>
 
@@ -146,7 +146,7 @@ export default function HomePage() {
               </span>
 
               {/* Ligne 3 : fixe */}
-              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground">
+              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground font-lucky font-light">
                 qui génèrent
               </span>
 

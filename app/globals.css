@@ -24,6 +24,7 @@
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-impact: 'Bangers', sans-serif;
+  --font-lucky: 'Luckiest Guy', sans-serif;
 
   /* Radius */
   --radius-card: 1.25rem;
@@ -51,6 +52,12 @@ body {
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.font-lucky {
+  font-family: 'Luckiest Guy', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
 
 ::selection {
   background-color: #C8553D;
