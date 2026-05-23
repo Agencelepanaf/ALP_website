@@ -107,7 +107,7 @@ export default function HomePage() {
             </h1>
           </RevealOnScroll>
 
-          {/* Tags services + CTA */}
+          {/* CTA */}
           <div className="mt-auto sm:mt-0 w-full">
           <RevealOnScroll delay={0.1}>
             <div className="flex flex-col gap-4 sm:gap-6">
