@@ -51,20 +51,20 @@ export default function CreationSiteWebPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* HERO */}
-      <section className="bg-background px-4 sm:px-6 lg:px-8 pt-20 md:pt-[90px] pb-16 border-b border-border">
+      <section className="bg-background px-4 sm:px-6 lg:px-8 pt-20 md:pt-[90px] pb-10 border-b border-border">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <div className="flex items-center gap-3 mb-8">
               <span className="w-6 h-px bg-accent-green" />
               <p className="text-xs font-medium tracking-[0.2em] uppercase text-foreground-muted">
-                Projet ponctuel
+                Création de site
               </p>
             </div>
             <h1 className="font-display font-light leading-[1.05] tracking-tight mb-8">
               <span className="block text-4xl md:text-6xl lg:text-7xl text-foreground">Votre site web,</span>
-              <span className="block text-4xl md:text-6xl lg:text-7xl italic text-accent-green">conçu et livré clé en main</span>
+              <span className="block text-4xl md:text-6xl lg:text-7xl text-accent-green">conçu et livré clé en main</span>
             </h1>
-            <p className="text-base text-foreground-muted leading-relaxed max-w-lg mb-8">
+            <p className="text-base text-foreground-muted leading-relaxed mb-8">
               Un livrable précis, un calendrier défini, un résultat mesurable.
             </p>
           </RevealOnScroll>
@@ -87,7 +87,7 @@ export default function CreationSiteWebPage() {
       </section>
 
       {/* CE QUI EST INCLUS */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-10">Ce qui est inclus</h2>
@@ -107,11 +107,11 @@ export default function CreationSiteWebPage() {
       </section>
 
       {/* PROCESS */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20 bg-surface">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14 bg-surface">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-3">Le process en 6 étapes</h2>
-            <p className="text-sm text-foreground-muted mb-10 max-w-lg">
+            <p className="text-sm text-foreground-muted mb-10">
               Un projet prévisible. Votre implication est limitée aux moments où votre expertise est indispensable.
             </p>
           </RevealOnScroll>
@@ -138,7 +138,7 @@ export default function CreationSiteWebPage() {
       </section>
 
       {/* FAQ */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <div className="max-w-3xl mx-auto">
           <RevealOnScroll>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-10">Questions fréquentes</h2>
@@ -157,7 +157,7 @@ export default function CreationSiteWebPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <div className="bg-dark rounded-3xl p-10 md:p-14 text-center relative overflow-hidden">

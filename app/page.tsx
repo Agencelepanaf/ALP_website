@@ -4,6 +4,7 @@ import Button from "@/components/ui/Button";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import AnimatedIcon from "@/components/ui/AnimatedIcon";
 import CyclingWord from "@/components/ui/CyclingWord";
+import { supabase } from "@/lib/supabase";
 
 export const metadata: Metadata = {
   title: "Le Panaf — Présence digitale des PME africaines ambitieuses",
@@ -44,17 +45,23 @@ const etapesMethode = [
 ];
 
 
-export default function HomePage() {
+export default async function HomePage() {
+  const { data: projetEnCours } = await supabase
+    .from('projet_en_cours')
+    .select('nom, emoji')
+    .eq('id', 1)
+    .single()
+
   return (
-    <div className="">
+    <div>
 
       {/* ── HERO ── fond clair, typo éditoriale Gemeos */}
-      <section className="relative min-h-dvh bg-background flex flex-col px-6 sm:px-8 lg:px-12 pt-20 md:pt-22.5 pb-16 overflow-hidden">
+      <section className="relative min-h-dvh bg-background flex flex-col px-6 sm:px-8 lg:px-12 pt-20 md:pt-22.5 pb-16">
 
         {/* Trait décoratif horizontal discret */}
         <div className="absolute top-0 left-0 right-0 h-px bg-border pointer-events-none" />
 
-        <div className="max-w-6xl mx-auto w-full flex flex-col justify-start sm:justify-center flex-1 items-center text-center pt-6 sm:pt-0">
+        <div className="max-w-6xl mx-auto w-full flex flex-col my-auto items-center text-center">
 
           {/* Label avec icône animée */}
           <RevealOnScroll>
@@ -126,36 +133,44 @@ export default function HomePage() {
             </div>
           </RevealOnScroll>
 
+
           {/* CTA */}
-          <div className="mt-auto sm:mt-0 w-full">
+          <div className="mt-8 sm:mt-10 w-full">
             <RevealOnScroll delay={0.1}>
-              <div className="flex flex-wrap gap-3 justify-center">
-                <Button href="/contact" variant="primary" className="text-sm px-7 py-3.5">
-                  Démarrer →
+              <div className="flex flex-wrap gap-3 justify-center items-center">
+                <Button href="/projets" variant="primary" className="text-sm px-7 py-3.5">
+                  Nos réalisations →
                 </Button>
-                <Button href="/methode" variant="ghost" className="text-sm px-7 py-3.5">
-                  Notre méthode
-                </Button>
+
+                {/* Teaser projet en cours — dynamique depuis Supabase */}
+                {projetEnCours?.nom && (
+                  <Link
+                    href="/projets#en-cours"
+                    className="flex items-center gap-3 bg-surface border border-border hover:border-accent rounded-full pl-2 pr-5 py-2 transition-all duration-200 group"
+                  >
+                    <div className="w-9 h-9 rounded-full shrink-0 bg-linear-to-br from-amber-400/50 to-orange-500/40 flex items-center justify-center text-lg leading-none">
+                      {projetEnCours.emoji ?? '🏗️'}
+                    </div>
+                    <div className="text-left">
+                      <p className="text-[10px] text-foreground-muted flex items-center gap-1.5 leading-none mb-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse inline-block" />
+                        Projet en cours
+                      </p>
+                      <p className="text-xs font-semibold text-foreground leading-none group-hover:text-accent transition-colors duration-200">
+                        {projetEnCours.nom} →
+                      </p>
+                    </div>
+                  </Link>
+                )}
               </div>
             </RevealOnScroll>
           </div>
         </div>
 
-        {/* Bouton bas de hero — mobile uniquement, statique */}
-        <div className="mt-auto pt-8 flex justify-center md:hidden">
-          <Link
-            href="/contact"
-            className="flex items-center gap-2 text-sm font-semibold bg-dark text-white shadow-2xl shadow-dark/30 px-6 py-3.5 rounded-full"
-          >
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            Discuter du projet
-          </Link>
-        </div>
-
       </section>
 
       {/* ── NOS SERVICES ── */}
-      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+      <section className="px-4 sm:px-6 lg:px-8 pt-4 pb-10 md:pt-6 md:pb-14">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <p className="text-xs font-semibold tracking-widest uppercase text-foreground-muted mb-2">
@@ -195,14 +210,14 @@ export default function HomePage() {
       </section>
 
       {/* ── DOUBLE REGARD ── */}
-      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14 bg-dark overflow-hidden relative">
+      <section className="px-4 sm:px-6 lg:px-8 py-8 md:py-12 bg-dark overflow-hidden relative">
         <div className="absolute inset-0 bg-accent-green/5 pointer-events-none" />
         <div className="max-w-6xl mx-auto relative">
           <RevealOnScroll>
             <p className="text-xs font-semibold tracking-widest uppercase text-dark-muted mb-2">
               Notre différence
             </p>
-            <h2 className="font-display text-3xl md:text-4xl text-white mb-6 max-w-2xl">
+            <h2 className="font-display text-3xl md:text-4xl text-white mb-6 max-w-3xl">
               Pourquoi notre double regard change tout
             </h2>
           </RevealOnScroll>
@@ -234,7 +249,7 @@ export default function HomePage() {
       </section>
 
       {/* ── MÉTHODE ── */}
-      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14 bg-surface">
+      <section className="px-4 sm:px-6 lg:px-8 py-8 md:py-12 bg-surface">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <p className="text-xs font-semibold tracking-widest uppercase text-foreground-muted mb-2">
@@ -265,7 +280,7 @@ export default function HomePage() {
       </section>
    
       {/* ── CTA FINAL ── */}
-      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+      <section className="px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <div className="bg-dark rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">

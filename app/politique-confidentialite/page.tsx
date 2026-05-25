@@ -18,19 +18,19 @@ export default function PolitiqueConfidentialitePage() {
         <h2 className="text-base font-semibold mt-8 mb-3">Données collectées</h2>
         <p className="text-sm text-gray-muted leading-relaxed mb-4">
           Nous collectons uniquement les données que vous nous transmettez volontairement via le
-          formulaire de contact : nom, email, nom d'entreprise, description du projet.
+          formulaire de contact : nom, email, nom d&apos;entreprise, description du projet.
         </p>
         <p className="text-sm text-gray-muted leading-relaxed">
           Des données de navigation peuvent être collectées via Google Analytics et Meta Pixel
-          si ces outils sont activés : pages visitées, durée de visite, type d'appareil, pays
-          d'origine. Ces données sont agrégées et anonymisées.
+          si ces outils sont activés : pages visitées, durée de visite, type d&apos;appareil, pays
+          d&apos;origine. Ces données sont agrégées et anonymisées.
         </p>
 
         <h2 className="text-base font-semibold mt-8 mb-3">Finalité du traitement</h2>
         <ul className="text-sm text-gray-muted leading-relaxed space-y-2 list-disc list-inside">
           <li>Répondre à vos demandes de contact</li>
-          <li>Améliorer l'expérience du site via les statistiques d'audience</li>
-          <li>Mesurer l'efficacité de nos communications (si Meta Pixel activé)</li>
+          <li>Améliorer l&apos;expérience du site via les statistiques d&apos;audience</li>
+          <li>Mesurer l&apos;efficacité de nos communications (si Meta Pixel activé)</li>
         </ul>
 
         <h2 className="text-base font-semibold mt-8 mb-3">Conservation des données</h2>
@@ -42,7 +42,7 @@ export default function PolitiqueConfidentialitePage() {
 
         <h2 className="text-base font-semibold mt-8 mb-3">Vos droits</h2>
         <p className="text-sm text-gray-muted leading-relaxed">
-          Vous disposez d'un droit d'accès, de rectification et de suppression de vos données
+          Vous disposez d&apos;un droit d&apos;accès, de rectification et de suppression de vos données
           personnelles. Pour exercer ces droits, contactez-nous à contact@agencelepanaf.com. Nous
           répondons sous 72h ouvrées.
         </p>
@@ -53,7 +53,7 @@ export default function PolitiqueConfidentialitePage() {
           de confidentialité :
         </p>
         <ul className="text-sm text-gray-muted leading-relaxed space-y-2 list-disc list-inside">
-          <li>Google Analytics (Google LLC) — analyse d'audience</li>
+          <li>Google Analytics (Google LLC) — analyse d&apos;audience</li>
           <li>Meta Pixel (Meta Platforms) — mesure de campagnes publicitaires</li>
           <li>Vercel (Vercel Inc.) — hébergement du site</li>
         </ul>

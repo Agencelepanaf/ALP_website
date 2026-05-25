@@ -73,10 +73,10 @@ const etapes = [
 
 export default function MethodePage() {
   return (
-    <div className="">
+    <div>
 
       {/* HERO */}
-      <section className="bg-background px-4 sm:px-6 lg:px-8 pt-20 md:pt-[90px] pb-16 border-b border-border">
+      <section className="bg-background px-4 sm:px-6 lg:px-8 pt-20 md:pt-[90px] pb-10 border-b border-border">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <div className="flex items-center gap-3 mb-8">
@@ -86,19 +86,17 @@ export default function MethodePage() {
               </p>
             </div>
             <h1 className="font-display font-light leading-[1.05] tracking-tight mb-8">
-              <span className="block text-4xl md:text-6xl lg:text-7xl text-foreground">De la stratégie</span>
-              <span className="block text-4xl md:text-6xl lg:text-7xl italic text-foreground-muted">au lancement</span>
+              <span className="block text-4xl md:text-6xl lg:text-7xl text-foreground">De la stratégie au lancement</span>
             </h1>
-            <p className="text-base text-foreground-muted leading-relaxed max-w-lg">
-              Un projet web réussi est un projet structuré. Chaque étape a une raison d'être
-              et des livrables précis.
+            <p className="text-base text-foreground-muted leading-relaxed">
+              Un projet web réussi est un projet structuré. Chaque étape a une raison d&apos;être et des livrables précis.
             </p>
           </RevealOnScroll>
         </div>
       </section>
 
       {/* ÉTAPES */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <div className="max-w-6xl mx-auto space-y-5">
           {etapes.map((etape, i) => (
             <RevealOnScroll key={etape.num} delay={0.05 * i}>
@@ -138,7 +136,7 @@ export default function MethodePage() {
       </section>
 
       {/* VALEURS */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20 bg-surface">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14 bg-surface">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-10">Comment nous travaillons avec vous</h2>
@@ -161,7 +159,7 @@ export default function MethodePage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <div className="bg-dark rounded-3xl p-10 md:p-14 text-center relative overflow-hidden">

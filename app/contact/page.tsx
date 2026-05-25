@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="">
+    <div>
 
       {/* HERO */}
-      <section className="bg-background px-4 sm:px-6 lg:px-8 pt-20 md:pt-[90px] pb-14 border-b border-border">
+      <section className="bg-background px-4 sm:px-6 lg:px-8 pt-20 md:pt-22.5 pb-10 border-b border-border">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <div className="flex items-center gap-3 mb-8">
@@ -26,7 +26,7 @@ export default function ContactPage() {
               <span className="block text-4xl md:text-5xl lg:text-6xl text-foreground">Parlons de</span>
               <span className="block text-4xl md:text-5xl lg:text-6xl italic text-accent">votre projet</span>
             </h1>
-            <p className="text-sm text-foreground-muted max-w-md leading-relaxed">
+            <p className="text-sm text-foreground-muted leading-relaxed">
               Pas de devis automatique, pas de relance agressive. Une réponse honnête sous 24h.
             </p>
           </RevealOnScroll>
@@ -34,7 +34,7 @@ export default function ContactPage() {
       </section>
 
       {/* CONTENU */}
-      <section className="px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 lg:gap-16">
 
@@ -83,7 +83,7 @@ export default function ContactPage() {
                     <p className="text-xs font-semibold text-dark-muted">Promesse</p>
                   </div>
                   <p className="text-sm text-white/80 leading-relaxed">
-                    Votre message arrive directement à l'équipe — pas à un service commercial,
+                    Votre message arrive directement à l&apos;équipe — pas à un service commercial,
                     pas à un assistant automatique.
                   </p>
                 </div>

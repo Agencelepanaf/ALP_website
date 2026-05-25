@@ -8,6 +8,14 @@ const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
+
+  // Nettoyage périodique pour éviter le memory leak (max 500 entrées)
+  if (rateLimitMap.size > 500) {
+    for (const [k, v] of rateLimitMap) {
+      if (now > v.resetAt) rateLimitMap.delete(k);
+    }
+  }
+
   const entry = rateLimitMap.get(ip);
   if (!entry || now > entry.resetAt) {
     rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
@@ -29,33 +37,73 @@ interface ContactPayload {
   description: string;
 }
 
+// Longueurs maximales autorisées par champ
+const MAX_LENGTHS = {
+  nom: 100,
+  email: 254,   // RFC 5321
+  tel: 30,
+  entreprise: 150,
+  typeProjet: 50,
+  budget: 50,
+  description: 5000,
+} as const;
+
 function validate(data: unknown): data is ContactPayload {
   if (typeof data !== "object" || data === null) return false;
   const d = data as Record<string, unknown>;
   return (
-    typeof d.nom === "string" && d.nom.trim().length > 0 &&
+    typeof d.nom === "string" &&
+    d.nom.trim().length > 0 &&
+    d.nom.length <= MAX_LENGTHS.nom &&
     typeof d.email === "string" &&
+    d.email.length <= MAX_LENGTHS.email &&
     /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(d.email) &&
-    typeof d.tel === "string" && d.tel.trim().length > 0 &&
-    typeof d.description === "string" && d.description.trim().length > 0
+    typeof d.tel === "string" &&
+    d.tel.trim().length > 0 &&
+    d.tel.length <= MAX_LENGTHS.tel &&
+    (d.entreprise === undefined ||
+      (typeof d.entreprise === "string" && d.entreprise.length <= MAX_LENGTHS.entreprise)) &&
+    (d.typeProjet === undefined ||
+      (typeof d.typeProjet === "string" && d.typeProjet.length <= MAX_LENGTHS.typeProjet)) &&
+    (d.budget === undefined ||
+      (typeof d.budget === "string" && d.budget.length <= MAX_LENGTHS.budget)) &&
+    typeof d.description === "string" &&
+    d.description.trim().length > 0 &&
+    d.description.length <= MAX_LENGTHS.description
   );
+}
+
+// ---------- Échappement HTML (protection XSS dans le template email) ----------
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;");
 }
 
 // ---------- Email template ----------
 function buildEmailHtml(p: ContactPayload): string {
   const rows: [string, string][] = [
-    ["Nom", p.nom],
-    ["Email", p.email],
-    ["Téléphone", p.tel],
-    ["Entreprise", p.entreprise || "—"],
-    ["Type de projet", p.typeProjet || "—"],
-    ["Budget", p.budget || "—"],
+    ["Nom", escapeHtml(p.nom)],
+    ["Email", escapeHtml(p.email)],
+    ["Téléphone", escapeHtml(p.tel)],
+    ["Entreprise", escapeHtml(p.entreprise || "—")],
+    ["Type de projet", escapeHtml(p.typeProjet || "—")],
+    ["Budget", escapeHtml(p.budget || "—")],
   ];
   const tableRows = rows
     .map(
       ([label, value]) =>
-        `<tr><td style="padding:8px 12px;font-weight:600;color:#555;white-space:nowrap">${label}</td><td style="padding:8px 12px;color:#111">${value}</td></tr>`
+        `<tr><td style="padding:8px 12px;font-weight:600;color:#555;white-space:nowrap">${label}</td><td style="padding:8px 12px;color:#333">${value}</td></tr>`
     )
+    .join("");
+
+  // Description échappée et formatée ligne par ligne (pas de pre-wrap avec HTML brut)
+  const descriptionHtml = escapeHtml(p.description)
+    .split("\n")
+    .map((line) => `<p style="margin:0 0 6px">${line}</p>`)
     .join("");
 
   return `
@@ -70,7 +118,7 @@ function buildEmailHtml(p: ContactPayload): string {
         </table>
         <div style="margin-top:24px">
           <p style="font-weight:600;color:#555;margin:0 0 8px">Message</p>
-          <div style="background:#f9f9f9;border-left:3px solid #C8553D;padding:16px;border-radius:0 8px 8px 0;white-space:pre-wrap;color:#111;font-size:14px;line-height:1.6">${p.description}</div>
+          <div style="background:#f9f9f9;border-left:3px solid #C8553D;padding:16px;border-radius:0 8px 8px 0;color:#333;font-size:14px;line-height:1.6">${descriptionHtml}</div>
         </div>
         <p style="margin:24px 0 0;font-size:12px;color:#999">Reçu le ${new Date().toLocaleString("fr-MA", { timeZone: "Africa/Casablanca" })} (heure de Casablanca)</p>
       </div>

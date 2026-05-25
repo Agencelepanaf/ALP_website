@@ -115,38 +115,37 @@ const jsonLd = {
 
 export default function PresenceDigitalePage() {
   return (
-    <div className="">
+    <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* HERO */}
-      <section className="bg-background px-4 sm:px-6 lg:px-8 pt-20 md:pt-[90px] pb-16 border-b border-border">
+      <section className="bg-background px-4 sm:px-6 lg:px-8 pt-20 md:pt-[90px] pb-10 border-b border-border">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <div className="flex items-center gap-3 mb-8">
               <span className="w-6 h-px bg-accent" />
               <p className="text-xs font-medium tracking-[0.2em] uppercase text-foreground-muted">
-                Accompagnement continu
+                Présence digitale
               </p>
             </div>
             <h1 className="font-display font-light leading-[1.05] tracking-tight mb-8">
               <span className="block text-4xl md:text-6xl lg:text-7xl text-foreground">Votre présence digitale,</span>
               <span className="block text-4xl md:text-6xl lg:text-7xl italic text-accent">pilotée dans la durée</span>
             </h1>
-            <p className="text-base text-foreground-muted leading-relaxed max-w-lg">
-              Un site web est un point de départ. Ce qui fait la différence, c'est ce qu'on
-              en fait sur douze mois.
+            <p className="text-base text-foreground-muted leading-relaxed">
+              Un site web est un point de départ. Ce qui fait la différence, c&apos;est ce qu&apos;on en fait sur douze mois.
             </p>
           </RevealOnScroll>
         </div>
       </section>
 
       {/* CE QUI EST INCLUS */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <p className="text-xs font-semibold tracking-widest uppercase text-foreground-muted mb-2">Ce qui est inclus</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-10">
-              Tout ce qu'il faut pour exister en ligne
+              Tout ce qu&apos;il faut pour exister en ligne
             </h2>
           </RevealOnScroll>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -164,19 +163,19 @@ export default function PresenceDigitalePage() {
       </section>
 
       {/* POURQUOI CONTINU */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20 bg-surface">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14 bg-surface">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <RevealOnScroll>
               <h2 className="font-display text-3xl md:text-4xl text-foreground">
-                Pourquoi un suivi continu plutôt qu'un site one-shot
+                Pourquoi un suivi continu plutôt qu&apos;un site one-shot
               </h2>
             </RevealOnScroll>
             <RevealOnScroll delay={0.1}>
               <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
-                <p>Un site web livré et laissé sans entretien sera, un an plus tard, moins performant qu'au premier jour. Google change. Les concurrents avancent. Les attentes évoluent.</p>
-                <p>Un site sans mise à jour, c'est un commercial qui arrête de parler à ses prospects. Les positions s'érodent. Le trafic baisse. Le contenu vieillit.</p>
-                <p className="font-medium text-foreground">L'accompagnement continu est l'antidote à cette obsolescence. Nous surveillons, ajustons, produisons — pour que votre site reste un actif, pas une plaquette oubliée.</p>
+                <p>Un site web livré et laissé sans entretien sera, un an plus tard, moins performant qu&apos;au premier jour. Google change. Les concurrents avancent. Les attentes évoluent.</p>
+                <p>Un site sans mise à jour, c&apos;est un commercial qui arrête de parler à ses prospects. Les positions s&apos;érodent. Le trafic baisse. Le contenu vieillit.</p>
+                <p className="font-medium text-foreground">L&apos;accompagnement continu est l&apos;antidote à cette obsolescence. Nous surveillons, ajustons, produisons — pour que votre site reste un actif, pas une plaquette oubliée.</p>
               </div>
             </RevealOnScroll>
           </div>
@@ -184,7 +183,7 @@ export default function PresenceDigitalePage() {
       </section>
 
       {/* ENGAGEMENTS */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-10">Nos engagements</h2>
@@ -192,7 +191,7 @@ export default function PresenceDigitalePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {engagements.map((e, i) => (
               <RevealOnScroll key={e.titre} delay={i * 0.08}>
-                <div className="bg-surface rounded-2xl p-6 border-l-4 border-accent border border-border shadow-sm">
+                <div className="bg-surface rounded-2xl p-6 border border-border border-l-4 border-l-accent shadow-sm">
                   <h3 className="text-base font-semibold mb-2">{e.titre}</h3>
                   <p className="text-sm text-foreground-muted leading-relaxed">{e.desc}</p>
                 </div>
@@ -203,14 +202,14 @@ export default function PresenceDigitalePage() {
       </section>
 
       {/* FAQ */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20 bg-surface">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14 bg-surface">
         <div className="max-w-3xl mx-auto">
           <RevealOnScroll>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-10">Questions fréquentes</h2>
           </RevealOnScroll>
           <div className="space-y-4">
             {faq.map((item, i) => (
-              <RevealOnScroll key={i} delay={i * 0.05}>
+              <RevealOnScroll key={item.q} delay={i * 0.05}>
                 <div className="bg-background rounded-2xl p-6 border border-border">
                   <h3 className="text-sm font-semibold mb-2">{item.q}</h3>
                   <p className="text-sm text-foreground-muted leading-relaxed">{item.r}</p>
@@ -222,7 +221,7 @@ export default function PresenceDigitalePage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <div className="bg-dark rounded-3xl p-10 md:p-14 text-center relative overflow-hidden">

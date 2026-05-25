@@ -27,8 +27,8 @@ export default function MentionsLegalesPage() {
 
         <h2 className="text-base font-semibold mt-8 mb-3">Propriété intellectuelle</h2>
         <p className="text-sm text-gray-muted leading-relaxed">
-          L'ensemble des contenus présents sur ce site — textes, visuels, code, logo — sont la
-          propriété exclusive de l'Agence Le Panaf. Toute reproduction, totale ou partielle, sans
+          L&apos;ensemble des contenus présents sur ce site — textes, visuels, code, logo — sont la
+          propriété exclusive de l&apos;Agence Le Panaf. Toute reproduction, totale ou partielle, sans
           autorisation préalable écrite est interdite.
         </p>
 
@@ -41,7 +41,7 @@ export default function MentionsLegalesPage() {
 
         <h2 className="text-base font-semibold mt-8 mb-3">Cookies</h2>
         <p className="text-sm text-gray-muted leading-relaxed">
-          Ce site peut utiliser des outils d'analyse d'audience (Google Analytics) et de
+          Ce site peut utiliser des outils d&apos;analyse d&apos;audience (Google Analytics) et de
           publicité (Meta Pixel). Ces outils déposent des cookies techniques. En naviguant
           sur ce site, vous acceptez leur utilisation. Vous pouvez vous y opposer via les
           paramètres de votre navigateur.
@@ -49,9 +49,9 @@ export default function MentionsLegalesPage() {
 
         <h2 className="text-base font-semibold mt-8 mb-3">Responsabilité</h2>
         <p className="text-sm text-gray-muted leading-relaxed">
-          L'Agence Le Panaf s'efforce de fournir des informations exactes et à jour. Toutefois,
-          nous ne garantissons pas l'exactitude, la complétude ou l'actualité des informations
-          publiées. L'utilisation de ce site se fait sous la responsabilité de l'utilisateur.
+          L&apos;Agence Le Panaf s&apos;efforce de fournir des informations exactes et à jour. Toutefois,
+          nous ne garantissons pas l&apos;exactitude, la complétude ou l&apos;actualité des informations
+          publiées. L&apos;utilisation de ce site se fait sous la responsabilité de l&apos;utilisateur.
         </p>
       </div>
     </Section>

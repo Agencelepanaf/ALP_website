@@ -3,16 +3,23 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/services/presence-digitale", label: "Présence digitale" },
   { href: "/services/creation-site-web", label: "Création de site" },
+  { href: "/projets", label: "Projets" },
   { href: "/methode", label: "Méthode" },
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Les pages étude de cas ont un hero sombre → forcer le header solid d'emblée
+  const hasDarkHero = /^\/projets\/.+/.test(pathname);
+  const isSolid = scrolled || hasDarkHero;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -24,7 +31,7 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
+          isSolid
             ? "bg-background/90 backdrop-blur-xl border-b border-border"
             : "bg-transparent"
         }`}
@@ -33,14 +40,14 @@ export default function Header() {
           <div className="flex items-center justify-between h-20 md:h-18">
 
             {/* Logo */}
-            <Link href="/" className="flex-shrink-0" aria-label="Agence Le Panaf — accueil">
+            <Link href="/" className="shrink-0" aria-label="Agence Le Panaf — accueil">
               <Image
                 src="/logo-white.png"
                 alt="Agence Le Panaf"
                 width={360}
                 height={96}
                 priority
-                className="h-14 w-auto"
+                className="h-14 w-auto shrink-0"
               />
             </Link>
 
@@ -63,7 +70,7 @@ export default function Header() {
                 href="/contact"
                 className="text-sm font-semibold bg-accent text-white hover:bg-accent-hover active:scale-95 transition-all duration-200 px-5 py-2.5 rounded-full"
               >
-                Discuter du projet
+                Discutons du projet
               </Link>
             </div>
 
@@ -75,9 +82,9 @@ export default function Header() {
               aria-expanded={menuOpen}
             >
               <div className="flex flex-col gap-1.5 w-5">
-                <span className={`block h-px bg-foreground transition-all duration-200 origin-center ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
+                <span className={`block h-px bg-foreground transition-all duration-200 origin-center ${menuOpen ? "rotate-45 translate-y-1.75" : ""}`} />
                 <span className={`block h-px bg-foreground transition-all duration-200 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
-                <span className={`block h-px bg-foreground transition-all duration-200 origin-center ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
+                <span className={`block h-px bg-foreground transition-all duration-200 origin-center ${menuOpen ? "-rotate-45 -translate-y-1.75" : ""}`} />
               </div>
             </button>
 
@@ -126,7 +133,7 @@ export default function Header() {
             onClick={() => setMenuOpen(false)}
             className="mt-6 flex items-center justify-center w-full text-base font-semibold bg-accent text-white hover:bg-accent-hover transition-all duration-200 py-4 rounded-2xl"
           >
-            Discuter du projet
+            Discutons du projet
           </Link>
         </div>
       </div>

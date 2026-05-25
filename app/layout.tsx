@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
@@ -53,46 +54,59 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const headersList = await headers();
+  const isAdmin = headersList.get('x-is-admin') === '1';
+
   return (
     <html lang="fr">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Le Panaf",
-              url: "https://lepanaf.com",
-              logo: "https://lepanaf.com/logo.svg",
-              contactPoint: {
-                "@type": "ContactPoint",
-                email: "contact@agencelepanaf.com",
-                contactType: "customer service",
-                availableLanguage: ["French", "Arabic"],
-              },
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Casablanca",
-                addressCountry: "MA",
-              },
-              areaServed: ["MA", "DZ", "TN", "SN", "CI"],
-              description:
-                "Agence de présence digitale pour les PME et les STARTUPS ambitieuses.",
-            }),
-          }}
-        />
+        {!isAdmin && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                name: "Le Panaf",
+                url: "https://lepanaf.com",
+                logo: "https://lepanaf.com/logo.svg",
+                contactPoint: {
+                  "@type": "ContactPoint",
+                  email: "contact@agencelepanaf.com",
+                  contactType: "customer service",
+                  availableLanguage: ["French", "Arabic"],
+                },
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Casablanca",
+                  addressCountry: "MA",
+                },
+                areaServed: ["MA", "DZ", "TN", "SN", "CI"],
+                description:
+                  "Agence de présence digitale pour les PME et les STARTUPS ambitieuses.",
+              }),
+            }}
+          />
+        )}
       </head>
       <body className="font-sans antialiased bg-background text-foreground" suppressHydrationWarning>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <CookieBanner />
+        {isAdmin ? (
+          // Pages admin : pas de header/footer public
+          <>{children}</>
+        ) : (
+          // Pages publiques : structure normale
+          <>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+            <CookieBanner />
+          </>
+        )}
         <AnalyticsProvider />
       </body>
     </html>

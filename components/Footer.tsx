@@ -51,6 +51,7 @@ export default function Footer() {
               {[
                 { href: "/services/presence-digitale", label: "Présence digitale" },
                 { href: "/services/creation-site-web", label: "Création de site web" },
+                { href: "/projets", label: "Nos projets" },
                 { href: "/methode", label: "Notre méthode" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (
@@ -83,7 +84,7 @@ export default function Footer() {
               <li className="text-sm text-dark-muted">Casablanca, Maroc</li>
               <li>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/edhem-rombhot/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-dark-muted hover:text-white transition-colors duration-200"
