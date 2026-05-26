@@ -29,9 +29,9 @@ export default function CyclingWord({
         <motion.span
           key={index}
           className="inline-block"
-          initial={{ y: "105%", opacity: 0, filter: "blur(6px)", skewY: 4 }}
-          animate={{ y: "0%", opacity: 1, filter: "blur(0px)", skewY: 0 }}
-          exit={{ y: "-105%", opacity: 0, filter: "blur(6px)", skewY: -4 }}
+          initial={{ y: "105%", opacity: 0 }}
+          animate={{ y: "0%", opacity: 1 }}
+          exit={{ y: "-105%", opacity: 0 }}
           transition={{
             duration: 0.45,
             ease: [0.22, 1, 0.36, 1],

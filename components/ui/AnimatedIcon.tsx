@@ -8,6 +8,8 @@ interface AnimatedIconProps {
   alt: string;
   size?: number;
   className?: string;
+  /** true pour les images above-the-fold (héro) — désactive le lazy-loading */
+  priority?: boolean;
 }
 
 export default function AnimatedIcon({
@@ -15,10 +17,11 @@ export default function AnimatedIcon({
   alt,
   size = 40,
   className = "",
+  priority = false,
 }: AnimatedIconProps) {
   return (
     <motion.div
-      className={`flex-shrink-0 ${className}`}
+      className={`shrink-0 ${className}`}
       style={{ width: size, height: size, transformStyle: "preserve-3d" }}
       whileHover={{
         rotate: [0, -8, 8, -6, 6, -3, 3, 0],
@@ -30,7 +33,7 @@ export default function AnimatedIcon({
         alt={alt}
         width={size}
         height={size}
-        loading="lazy"
+        priority={priority}
         style={{ width: "100%", height: "100%", objectFit: "contain" }}
       />
     </motion.div>

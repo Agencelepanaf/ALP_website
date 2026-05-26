@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
@@ -7,6 +8,13 @@ import AnalyticsProvider from "@/components/AnalyticsProvider";
 import "./globals.css";
 import "@fontsource/bangers";
 import "@fontsource/luckiest-guy";
+
+// Inter auto-hébergé via next/font — aucune requête vers fonts.googleapis.com au runtime
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lepanaf.com"),
@@ -63,7 +71,7 @@ export default async function RootLayout({
   const isAdmin = headersList.get('x-is-admin') === '1';
 
   return (
-    <html lang="fr">
+    <html lang="fr" className={inter.variable}>
       <head>
         {!isAdmin && (
           <script

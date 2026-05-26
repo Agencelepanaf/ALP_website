@@ -4,6 +4,7 @@ import Button from "@/components/ui/Button";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import AnimatedIcon from "@/components/ui/AnimatedIcon";
 import CyclingWord from "@/components/ui/CyclingWord";
+import FloatingCTA from "@/components/ui/FloatingCTA";
 import { supabase } from "@/lib/supabase";
 
 export const metadata: Metadata = {
@@ -70,6 +71,7 @@ export default async function HomePage() {
                 src="/icon-slogan.png"
                 alt="Icône Le Panaf"
                 size={36}
+                priority
               />
               <p className="text-xs font-medium tracking-[0.2em] uppercase text-foreground-muted whitespace-nowrap">
                 Votre visibilité, notre engagement
@@ -166,6 +168,9 @@ export default async function HomePage() {
             </RevealOnScroll>
           </div>
         </div>
+
+        {/* Bouton CTA mobile — apparaît en bas du hero avec animation */}
+        <FloatingCTA />
 
       </section>
 
