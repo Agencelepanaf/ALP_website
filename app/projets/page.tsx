@@ -290,10 +290,10 @@ export default async function ProjetsPage() {
             <div className="bg-dark rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-accent/15 rounded-full blur-3xl pointer-events-none" />
               <h2 className="font-display text-3xl md:text-4xl text-white mb-4 relative">
-                Votre projet, c&apos;est le prochain ?
+                Votre projet est le prochain ?
               </h2>
               <p className="text-white/60 mb-8 text-sm max-w-md mx-auto relative">
-                Parlez-nous de votre entreprise — nous vous répondons sous 24 h.
+                Parlez-nous de votre entreprise. Nous vous répondons sous 24 h.
               </p>
               <Button href="/contact" variant="primary" className="text-sm px-8 py-4 relative">
                 Discutons du projet →
