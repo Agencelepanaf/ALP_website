@@ -71,12 +71,32 @@ const etapes = [
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Méthode de création de site web — Le Panaf",
+  description:
+    "Découvrez comment l'Agence Le Panaf conduit chaque projet : 6 étapes, des livrables clairs, une implication client limitée aux moments essentiels.",
+  totalTime: "P6W",
+  step: etapes.map((e, i) => ({
+    "@type": "HowToStep",
+    position: i + 1,
+    name: e.titre,
+    text: e.description,
+    itemListElement: e.livrables.map((l) => ({
+      "@type": "HowToDirection",
+      text: l,
+    })),
+  })),
+};
+
 export default function MethodePage() {
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* HERO */}
-      <section className="bg-background px-4 sm:px-6 lg:px-8 pt-20 md:pt-[90px] pb-10 border-b border-border">
+      <section className="bg-background px-4 sm:px-6 lg:px-8 pt-20 md:pt-22.5 pb-10 border-b border-border">
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <div className="flex items-center gap-3 mb-8">
@@ -118,7 +138,7 @@ export default function MethodePage() {
                     <ul className="space-y-2">
                       {etape.livrables.map((l, j) => (
                         <li key={j} className="flex items-start gap-2 text-xs text-foreground">
-                          <span className={`mt-0.5 flex-shrink-0 ${etape.numColor}`}>→</span>
+                          <span className={`mt-0.5 shrink-0 ${etape.numColor}`}>→</span>
                           {l}
                         </li>
                       ))}
@@ -163,7 +183,7 @@ export default function MethodePage() {
         <div className="max-w-6xl mx-auto">
           <RevealOnScroll>
             <div className="bg-dark rounded-3xl p-10 md:p-14 text-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-accent-green/5 pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-br from-accent/5 to-accent-green/5 pointer-events-none" />
               <h2 className="font-display text-3xl md:text-4xl text-white mb-4 relative">Prêt à commencer ?</h2>
               <p className="text-white/60 mb-8 text-sm max-w-md mx-auto relative">
                 La première étape est simple : une conversation. Décrivez-nous votre projet.

@@ -107,7 +107,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Présence digitale",
-  provider: { "@type": "Organization", name: "L'Agence Le Panaf", url: "https://lepanaf.com" },
+  provider: { "@type": "Organization", name: "L'Agence Le Panaf", url: "https://agencelepanaf.com" },
   description: "Accompagnement continu SEO, contenu, stratégie digitale pour PME marocaines et africaines.",
   areaServed: ["MA", "DZ", "TN", "SN", "CI"],
   serviceType: "Digital Marketing",

@@ -39,7 +39,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Création de site web",
-  provider: { "@type": "Organization", name: "Le Panaf", url: "https://lepanaf.com" },
+  provider: { "@type": "Organization", name: "Le Panaf", url: "https://agencelepanaf.com" },
   description: "Sites web sur mesure pour PME marocaines et africaines.",
   areaServed: ["MA", "DZ", "TN", "SN", "CI"],
   serviceType: "Web Development",

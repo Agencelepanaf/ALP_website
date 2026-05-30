@@ -3,7 +3,7 @@ import Section from "@/components/ui/Section";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
-  description: "Mentions légales du site lepanaf.com",
+  description: "Mentions légales du site agencelepanaf.com",
   robots: { index: false, follow: false },
 };
 

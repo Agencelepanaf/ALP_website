@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CookieBanner from "@/components/CookieBanner";
+import CookieBannerWrapper from "@/components/CookieBannerWrapper";
 import AnalyticsProvider from "@/components/AnalyticsProvider";
 import "./globals.css";
 import "@fontsource/bangers";
@@ -17,22 +17,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lepanaf.com"),
+  metadataBase: new URL("https://agencelepanaf.com"),
   title: {
-    default: "Le Panaf — Agence de présence digitale à Casablanca",
+    default: "Agencelepanaf : Agence Web Digitale à Casablanca",
     template: "%s | Le Panaf",
   },
   description:
-    "Le Panaf accompagne les PME au Maroc et en Afrique francophone dans la construction d'une présence en ligne qui attire, convainc et convertit.",
+    "Le Panaf est une agence digitale au Maroc qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.",
   keywords: ["agence digitale Casablanca", "création site web Maroc", "présence digitale PME Afrique"],
-  authors: [{ name: "Le Panaf", url: "https://lepanaf.com" }],
+  authors: [{ name: "Le Panaf", url: "https://agencelepanaf.com" }],
   creator: "Le Panaf",
   openGraph: {
     type: "website",
     locale: "fr_MA",
-    url: "https://lepanaf.com",
+    url: "https://agencelepanaf.com",
     siteName: "Le Panaf",
-    title: "Le Panaf — Agence de présence digitale à Casablanca",
+    title: "Agencelepanaf : Agence Web Digitale à Casablanca",
     description:
       "Présence digitale pour les PME et les STARTUPS ambitieuses. Site web, stratégie, contenu, suivi.",
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Le Panaf — Agence de présence digitale à Casablanca",
+    title: "Agencelepanaf : Agence Web Digitale à Casablanca",
     description:
       "Présence digitale pour les PME et les STARTUPS ambitieuses. Basé à Casablanca.",
     images: ["/og-image.png"],
@@ -79,10 +79,11 @@ export default async function RootLayout({
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
                 "@context": "https://schema.org",
-                "@type": "Organization",
+                "@type": "LocalBusiness",
                 name: "Le Panaf",
-                url: "https://lepanaf.com",
-                logo: "https://lepanaf.com/logo.svg",
+                url: "https://agencelepanaf.com",
+                logo: "https://agencelepanaf.com/logo.svg",
+                image: "https://agencelepanaf.com/og-image.png",
                 contactPoint: {
                   "@type": "ContactPoint",
                   email: "contact@agencelepanaf.com",
@@ -112,7 +113,7 @@ export default async function RootLayout({
             <Header />
             <main>{children}</main>
             <Footer />
-            <CookieBanner />
+            <CookieBannerWrapper />
           </>
         )}
         <AnalyticsProvider />

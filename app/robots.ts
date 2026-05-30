@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/mentions-legales", "/politique-confidentialite"],
     },
-    sitemap: "https://lepanaf.com/sitemap.xml",
+    sitemap: "https://agencelepanaf.com/sitemap.xml",
   };
 }

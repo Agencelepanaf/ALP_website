@@ -3,7 +3,7 @@ import Section from "@/components/ui/Section";
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
-  description: "Politique de confidentialité du site lepanaf.com",
+  description: "Politique de confidentialité du site agencelepanaf.com",
   robots: { index: false, follow: false },
 };
 
