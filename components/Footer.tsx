@@ -23,7 +23,7 @@ export default function Footer() {
             </Link>
             <p className="text-sm text-dark-muted leading-relaxed max-w-xs">
               Le Panaf est une agence digitale qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.
-              Basé à Casablanca, ouvert sur le Monde.{" "}
+              <br />Basé à Casablanca, ouvert sur le Monde.{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
