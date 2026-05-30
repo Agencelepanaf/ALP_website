@@ -20,27 +20,36 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://agencelepanaf.com"),
   title: {
     default: "Agencelepanaf : Agence Web Digitale à Casablanca",
-    template: "%s | Le Panaf",
+    template: "%s | Agence Le Panaf",
   },
   description:
     "Le Panaf est une agence digitale au Maroc qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.",
   keywords: ["agence digitale Casablanca", "création site web Maroc", "présence digitale PME Afrique"],
-  authors: [{ name: "Le Panaf", url: "https://agencelepanaf.com" }],
-  creator: "Le Panaf",
+  authors: [{ name: "Agence Le Panaf", url: "https://agencelepanaf.com" }],
+  creator: "Agence Le Panaf",
   openGraph: {
     type: "website",
     locale: "fr_MA",
     url: "https://agencelepanaf.com",
-    siteName: "Le Panaf",
-    title: "Agencelepanaf : Agence Web Digitale à Casablanca",
+    siteName: "Agence Le Panaf",
+    title: "Agence Le panaf : Agence Web Digitale à Casablanca",
     description:
-      "Présence digitale pour les PME et les STARTUPS ambitieuses. Site web, stratégie, contenu, suivi.",
+      "Le Panaf est une agence digitale au Maroc qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Le Panaf — Agence de présence digitale",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Agencelepanaf : Agence Web Digitale à Casablanca",
+    title: "Agence Le Panaf : Agence Web Digitale à Casablanca",
     description:
-      "Présence digitale pour les PME et les STARTUPS ambitieuses. Basé à Casablanca.",
+      "Le Panaf est une agence digitale au Maroc qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -88,7 +97,7 @@ export default async function RootLayout({
                 },
                 areaServed: ["MA", "DZ", "TN", "SN", "CI"],
                 description:
-                  "Agence de présence digitale pour les PME et les STARTUPS ambitieuses.",
+                  "Le Panaf est une agence digitale au Maroc qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.",
               }),
             }}
           />
