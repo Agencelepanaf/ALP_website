@@ -35,21 +35,12 @@ export const metadata: Metadata = {
     title: "Agencelepanaf : Agence Web Digitale à Casablanca",
     description:
       "Présence digitale pour les PME et les STARTUPS ambitieuses. Site web, stratégie, contenu, suivi.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Le Panaf — Agence de présence digitale",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Agencelepanaf : Agence Web Digitale à Casablanca",
     description:
       "Présence digitale pour les PME et les STARTUPS ambitieuses. Basé à Casablanca.",
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,
