@@ -8,8 +8,8 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/services/presence-digitale", label: "Présence digitale" },
   { href: "/services/creation-site-web", label: "Création de site" },
-  { href: "/projets", label: "Projets" },
-  { href: "/methode", label: "Méthode" },
+  { href: "/realisations", label: "Réalisations" },
+  { href: "/notre-methode", label: "Notre méthode" },
 ];
 
 export default function Header() {
@@ -18,7 +18,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Les pages étude de cas ont un hero sombre → forcer le header solid d'emblée
-  const hasDarkHero = /^\/projets\/.+/.test(pathname);
+  const hasDarkHero = /^\/realisations\/.+/.test(pathname);
   const isSolid = scrolled || hasDarkHero;
 
   useEffect(() => {

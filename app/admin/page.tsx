@@ -71,7 +71,7 @@ export default async function AdminDashboardPage() {
             Nouveau projet
           </Link>
           <Link
-            href="/projets"
+            href="/realisations"
             target="_blank"
             className="inline-flex items-center gap-2 bg-[#F5F5F3] hover:bg-[#EEEEE9] text-[#555] text-sm font-medium px-4 py-2 rounded-xl transition-colors duration-150"
           >

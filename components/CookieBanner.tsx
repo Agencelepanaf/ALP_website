@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "@/components/ui/Button";
 
 export default function CookieBanner() {
-  const [visible, setVisible] = useState(
-    () => typeof window !== "undefined" && !localStorage.getItem("cookie_consent")
-  );
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (!localStorage.getItem("cookie_consent")) setVisible(true);
+  }, []);
 
   function accept() {
     localStorage.setItem("cookie_consent", "accepted");

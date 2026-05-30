@@ -123,7 +123,7 @@ export async function setStatutAction(
     return { error: 'Erreur lors de la mise à jour du statut.' }
   }
 
-  revalidatePath('/projets')
+  revalidatePath('/realisations')
   revalidatePath('/admin/realisations')
   revalidatePath('/')
   return { success: true }
@@ -264,7 +264,7 @@ export async function createProjetAction(_prevState: unknown, formData: FormData
     throw new Error('Erreur lors de la création du projet.')
   }
 
-  revalidatePath('/projets')
+  revalidatePath('/realisations')
   revalidatePath('/admin/realisations')
   redirect('/admin/realisations')
 }
@@ -334,8 +334,8 @@ export async function updateProjetAction(_prevState: unknown, formData: FormData
     throw new Error('Erreur lors de la mise à jour du projet.')
   }
 
-  revalidatePath('/projets')
-  revalidatePath(`/projets/${data.slug}`)
+  revalidatePath('/realisations')
+  revalidatePath(`/realisations/${data.slug}`)
   revalidatePath('/admin/realisations')
   redirect('/admin/realisations')
 }
@@ -352,6 +352,6 @@ export async function deleteProjetAction(formData: FormData) {
     throw new Error('Erreur lors de la suppression du projet.')
   }
 
-  revalidatePath('/projets')
+  revalidatePath('/realisations')
   revalidatePath('/admin/realisations')
 }

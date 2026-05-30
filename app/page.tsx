@@ -8,9 +8,9 @@ import FloatingCTA from "@/components/ui/FloatingCTA";
 import { supabase } from "@/lib/supabase";
 
 export const metadata: Metadata = {
-  title: "Le Panaf — Présence digitale des PME africaines ambitieuses",
+  title: "Agencelepanaf: Agence Web Digitale à Casablanca",
   description:
-    "Le Panaf accompagne les PME au Maroc et en Afrique francophone dans la construction d'une présence en ligne qui attire, convainc et convertit.",
+    "Le Panaf est une Agence web digitale qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.",
 };
 
 const services = [
@@ -140,14 +140,14 @@ export default async function HomePage() {
           <div className="mt-8 sm:mt-10 w-full">
             <RevealOnScroll delay={0.1}>
               <div className="flex flex-wrap gap-3 justify-center items-center">
-                <Button href="/projets" variant="primary" className="text-sm px-7 py-3.5">
+                <Button href="/realisations" variant="primary" className="text-sm px-7 py-3.5">
                   Nos réalisations →
                 </Button>
 
                 {/* Teaser projet en cours — dynamique depuis Supabase */}
                 {projetEnCours?.nom && (
                   <Link
-                    href="/projets#en-cours"
+                    href="/realisations#en-cours"
                     className="flex items-center gap-3 bg-surface border border-border hover:border-accent rounded-full pl-2 pr-5 py-2 transition-all duration-200 group"
                   >
                     <div className="w-9 h-9 rounded-full shrink-0 bg-linear-to-br from-amber-400/50 to-orange-500/40 flex items-center justify-center text-lg leading-none">
@@ -277,7 +277,7 @@ export default async function HomePage() {
           </div>
 
           <RevealOnScroll delay={0.2}>
-            <Link href="/methode" className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-accent transition-colors duration-200">
+            <Link href="/notre-methode" className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-accent transition-colors duration-200">
               Lire la méthode complète →
             </Link>
           </RevealOnScroll>

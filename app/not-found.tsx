@@ -81,7 +81,7 @@ export default function NotFound() {
             {[
               { label: "Présence digitale", href: "/services/presence-digitale" },
               { label: "Création de site", href: "/services/creation-site-web" },
-              { label: "Notre méthode", href: "/methode" },
+              { label: "Notre méthode", href: "/notre-methode" },
             ].map((link) => (
               <Link
                 key={link.href}

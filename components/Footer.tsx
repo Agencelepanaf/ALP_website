@@ -51,8 +51,8 @@ export default function Footer() {
               {[
                 { href: "/services/presence-digitale", label: "Présence digitale" },
                 { href: "/services/creation-site-web", label: "Création de site web" },
-                { href: "/projets", label: "Nos projets" },
-                { href: "/methode", label: "Notre méthode" },
+                { href: "/realisations", label: "Nos réalisations" },
+                { href: "/notre-methode", label: "Notre méthode" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.href}>

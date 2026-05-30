@@ -260,7 +260,7 @@ export default async function ProjetDetailPage(
                 className="flex items-center gap-2 text-[11px] tracking-wide uppercase"
                 style={{ color: "#888880" }}
               >
-                <Link href="/projets" className="hover:text-white transition-colors">
+                <Link href="/realisations" className="hover:text-white transition-colors">
                   Projet
                 </Link>
                 <span style={{ opacity: 0.3 }}>/</span>
@@ -846,7 +846,7 @@ export default async function ProjetDetailPage(
                 <RevealOnScroll key={p.id} delay={i * 0.07}>
                   {p.slug ? (
                     <Link
-                      href={`/projets/${p.slug}`}
+                      href={`/realisations/${p.slug}`}
                       className="case-project-light group"
                     >
                       <div>
@@ -931,7 +931,7 @@ export default async function ProjetDetailPage(
               >
                 Démarrer un projet
               </a>
-              <Link href="/projets" className="case-btn-ghost">
+              <Link href="/realisations" className="case-btn-ghost">
                 Voir tous les projets
               </Link>
             </div>

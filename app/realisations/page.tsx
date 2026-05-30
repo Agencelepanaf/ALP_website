@@ -204,7 +204,7 @@ export default async function ProjetsPage() {
                 return (
                   <RevealOnScroll key={`enc-${p.id}`} delay={i * 0.07}>
                     {hasEtudeDeCas(p) ? (
-                      <Link href={`/projets/${p.slug}`} className="block h-full">
+                      <Link href={`/realisations/${p.slug}`} className="block h-full">
                         {cardContent}
                       </Link>
                     ) : (
