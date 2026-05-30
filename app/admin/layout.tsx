@@ -23,7 +23,7 @@ function AdminSidebar() {
             <span className="text-white text-xs font-bold">LP</span>
           </div>
           <div>
-            <p className="text-white text-sm font-semibold leading-none">Le Panaf</p>
+            <p className="text-white text-sm font-semibold leading-none">Agence Le Panaf</p>
             <p className="text-white/40 text-[10px] leading-none mt-0.5 group-hover:text-white/60 transition-colors">
               Admin ↗
             </p>

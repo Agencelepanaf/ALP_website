@@ -110,7 +110,7 @@ function buildEmailHtml(p: ContactPayload): string {
     <div style="font-family:sans-serif;max-width:600px;margin:0 auto;background:#fff;border:1px solid #e5e5e5;border-radius:12px;overflow:hidden">
       <div style="background:#C8553D;padding:24px 32px">
         <h1 style="margin:0;color:#fff;font-size:20px">Nouvelle demande de contact</h1>
-        <p style="margin:4px 0 0;color:rgba(255,255,255,0.8);font-size:14px">Le Panaf — formulaire de contact</p>
+        <p style="margin:4px 0 0;color:rgba(255,255,255,0.8);font-size:14px">Agence Le Panaf — formulaire de contact</p>
       </div>
       <div style="padding:32px">
         <table style="width:100%;border-collapse:collapse;background:#f9f9f9;border-radius:8px;overflow:hidden">

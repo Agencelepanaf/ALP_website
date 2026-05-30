@@ -216,4 +216,4 @@ Nous lisons chaque demande personnellement. Votre message arrive directement à 
 ## Footer
 
 **Baseline** :
-Présence digitale pour les PME et les Startup ambitieuses. Basé à Casablanca, ouvert sur l'Afrique.
+Le Panaf est une agence digitale au Maroc qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe. Basé à Casablanca, ouvert sur l'Afrique.

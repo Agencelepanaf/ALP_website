@@ -19,10 +19,10 @@ export default function Footer() {
                 height={40}
                 className="h-10 w-auto"
               />
-              <span className="font-display text-xl font-semibold text-white tracking-wide">LE PANAF</span>
+              <span className="font-display text-xl font-semibold text-white tracking-wide">AGENCE LE PANAF</span>
             </Link>
             <p className="text-sm text-dark-muted leading-relaxed max-w-xs">
-              Présence digitale pour les PME et les STARTUPS ambitieuses.
+              Le Panaf est une agence digitale qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.
               Basé à Casablanca, ouvert sur le Monde.{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"

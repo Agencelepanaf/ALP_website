@@ -5,7 +5,7 @@ import ContactForm from "./ContactForm";
 export const metadata: Metadata = {
   title: "Contact — Parlons de votre projet",
   description:
-    "Décrivez votre projet à Le Panaf. Réponse sous 24h. Pas de devis automatique, pas de relance commerciale agressive.",
+    "Décrivez votre projet à l'Agence Le Panaf. Réponse sous 24h. Pas de devis automatique, pas de relance commerciale agressive.",
 };
 
 export default function ContactPage() {
