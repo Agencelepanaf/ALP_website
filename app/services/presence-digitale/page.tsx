@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Présence digitale — Accompagnement continu pour PME",
   description:
     "L'Agence Le Panaf pilote votre présence en ligne dans la durée : site web, SEO, contenu, analytics. Un partenariat stratégique, pas un livrable ponctuel.",
+  alternates: {
+    canonical: "https://agencelepanaf.com/services/presence-digitale",
+  },
 };
 
 const inclus = [

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Création de site web — Livrable clé en main",
   description:
     "L'Agence Le Panaf conçoit et développe votre site web : audit, design, développement, SEO, formation. Livraison en 4 à 8 semaines.",
+  alternates: {
+    canonical: "https://agencelepanaf.com/services/creation-site-web",
+  },
 };
 
 const inclus = [
