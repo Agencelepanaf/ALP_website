@@ -7,6 +7,9 @@ import type { Article } from '@/lib/supabase'
 export const metadata: Metadata = {
   title: 'Blog',
   description: 'Conseils, méthodes et retours d\'expérience sur la présence digitale des entreprises en Afrique francophone.',
+  alternates: {
+    canonical: 'https://agencelepanaf.com/blog',
+  },
 }
 
 function formatDate(iso: string) {

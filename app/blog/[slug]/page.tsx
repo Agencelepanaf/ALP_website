@@ -22,10 +22,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: data.titre,
     description: data.description || undefined,
+    alternates: {
+      canonical: `https://agencelepanaf.com/blog/${slug}`,
+    },
     openGraph: {
       title: data.titre,
       description: data.description || undefined,
       type: 'article',
+      url: `https://agencelepanaf.com/blog/${slug}`,
     },
   }
 }
@@ -49,8 +53,23 @@ export default async function ArticlePage({ params }: Props) {
 
   if (!article) notFound()
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: article.titre,
+    description: article.description ?? undefined,
+    image: article.image_url ?? undefined,
+    datePublished: article.published_at ?? article.created_at,
+    dateModified: article.updated_at ?? article.published_at ?? article.created_at,
+    author: { '@type': 'Organization', name: 'Agence Le Panaf', url: 'https://agencelepanaf.com' },
+    publisher: { '@type': 'Organization', name: 'Agence Le Panaf', url: 'https://agencelepanaf.com' },
+    url: `https://agencelepanaf.com/blog/${slug}`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://agencelepanaf.com/blog/${slug}` },
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* En-tête article */}
       <header className="px-4 sm:px-6 lg:px-8 pt-32 pb-10 md:pt-36 border-b border-border">
