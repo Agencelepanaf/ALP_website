@@ -49,6 +49,21 @@ export type ResultatItem = {
 
 // ─── Type principal Projet ────────────────────────────────────────────────────
 
+export type ArticleStatut = 'brouillon' | 'publie'
+
+export type Article = {
+  id: string
+  slug: string
+  titre: string
+  description: string
+  contenu: string
+  image_url: string | null
+  statut: ArticleStatut
+  published_at: string | null
+  created_at: string
+  updated_at: string
+}
+
 export type Projet = {
   id: number
   statut: StatutProjet

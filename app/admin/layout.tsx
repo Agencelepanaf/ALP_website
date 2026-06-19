@@ -3,11 +3,12 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { logoutAction } from './actions'
-import { LayoutGrid, FolderOpen, LogOut } from 'lucide-react'
+import { LayoutGrid, FolderOpen, FileText, LogOut } from 'lucide-react'
 
 const navItems = [
-  { href: '/admin',            label: 'Dashboard', Icon: LayoutGrid, exact: true },
-  { href: '/admin/realisations', label: 'Projets',   Icon: FolderOpen, exact: false },
+  { href: '/admin',               label: 'Dashboard', Icon: LayoutGrid, exact: true },
+  { href: '/admin/realisations',  label: 'Projets',   Icon: FolderOpen, exact: false },
+  { href: '/admin/articles',      label: 'Articles',  Icon: FileText,   exact: false },
 ]
 
 function AdminSidebar() {

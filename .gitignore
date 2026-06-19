@@ -2,6 +2,7 @@
 
 # Claude Code - préférences personnelles (ne pas committer)
 .claude/settings.local.json
+.mcp.json
 
 # dependencies
 /node_modules

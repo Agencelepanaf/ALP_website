@@ -48,10 +48,12 @@ const etapesMethode = [
 
 export default async function HomePage() {
   const { data: projetEnCours } = await supabase
-    .from('projet_en_cours')
+    .from('projets')
     .select('nom, emoji')
-    .eq('id', 1)
-    .single()
+    .in('statut', ['en_cours', 'vedette'])
+    .order('ordre', { ascending: true })
+    .limit(1)
+    .maybeSingle()
 
   return (
     <div>

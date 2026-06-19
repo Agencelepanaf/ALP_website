@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/services/creation-site-web", label: "Création de site" },
   { href: "/realisations", label: "Réalisations" },
   { href: "/notre-methode", label: "Notre méthode" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function Header() {

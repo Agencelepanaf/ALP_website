@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Agence Le Panaf",
   },
   description:
-    "Le Panaf est une agence digitale au Maroc qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.",
+    "Le Panaf est une agence digitale à Casa qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.",
   keywords: ["agence digitale Casablanca", "création site web Maroc", "présence digitale PME Afrique"],
   authors: [{ name: "Agence Le Panaf", url: "https://agencelepanaf.com" }],
   creator: "Agence Le Panaf",
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     locale: "fr_MA",
     url: "https://agencelepanaf.com",
     siteName: "Agence Le Panaf",
-    title: "Agence Le panaf : Agence Web Digitale à Casablanca",
+    title: "Agence Le Panaf : Agence Web Digitale à Casablanca",
     description:
-      "Le Panaf est une agence digitale au Maroc qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.",
+      "Le Panaf est une agence digitale à Casa qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://agencelepanaf.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Le Panaf — Agence de présence digitale",
@@ -48,8 +48,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Agence Le Panaf : Agence Web Digitale à Casablanca",
     description:
-      "Le Panaf est une agence digitale au Maroc qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.",
-    images: ["/og-image.png"],
+      "Le Panaf est une agence digitale à Casa qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.",
+    images: ["https://agencelepanaf.com/og-image.png"],
   },
   robots: {
     index: true,
@@ -97,7 +97,7 @@ export default async function RootLayout({
                 },
                 areaServed: ["MA", "DZ", "TN", "SN", "CI"],
                 description:
-                  "Le Panaf est une agence digitale au Maroc qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.",
+                  "Le Panaf est une agence digitale à Casa qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.",
               }),
             }}
           />
