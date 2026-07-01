@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieBannerWrapper from "@/components/CookieBannerWrapper";
 import AnalyticsProvider from "@/components/AnalyticsProvider";
+import ContactClickTracking from "@/components/ContactClickTracking";
 import "./globals.css";
 import "@fontsource/bangers";
 import "@fontsource/luckiest-guy";
@@ -117,6 +118,7 @@ export default async function RootLayout({
           </>
         )}
         <AnalyticsProvider />
+        <ContactClickTracking />
       </body>
     </html>
   );
