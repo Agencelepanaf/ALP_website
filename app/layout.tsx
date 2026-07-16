@@ -20,7 +20,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://agencelepanaf.com"),
   title: {
-    default: "Agencelepanaf : Agence Web Digitale à Casablanca",
+    default: "Agence Le Panaf : Agence Web Digitale à Casablanca",
     template: "%s | Agence Le Panaf",
   },
   description:

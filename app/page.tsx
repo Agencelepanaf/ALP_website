@@ -8,7 +8,7 @@ import FloatingCTA from "@/components/ui/FloatingCTA";
 import { supabase } from "@/lib/supabase";
 
 export const metadata: Metadata = {
-  title: "Agencelepanaf: Agence Web Digitale à Casablanca",
+  title: "Agence Le Panaf : Agence Web Digitale à Casablanca",
   description:
     "Le Panaf est une Agence web digitale qui conçoit des sites web performants pour des entreprises francophones en Afrique et en Europe.",
 };

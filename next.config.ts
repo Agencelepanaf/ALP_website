@@ -21,6 +21,27 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  async redirects() {
+    return [
+      // Anciennes routes renommées le 30/05 (commit e35667e) : redirections 301
+      // pour les liens externes, les favoris et les pages encore en cache.
+      {
+        source: "/projets",
+        destination: "/realisations",
+        permanent: true,
+      },
+      {
+        source: "/projets/:slug*",
+        destination: "/realisations/:slug*",
+        permanent: true,
+      },
+      {
+        source: "/methode",
+        destination: "/notre-methode",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
