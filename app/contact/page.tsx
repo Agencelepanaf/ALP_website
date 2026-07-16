@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import ContactForm from "./ContactForm";
+import { WHATSAPP_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact — Parlons de votre projet",
@@ -56,6 +57,12 @@ export default function ContactPage() {
                       <p className="text-xs text-foreground-muted mb-0.5">Nous contacter</p>
                       <a href="tel:+212638725690" className="text-sm font-medium hover:text-accent transition-colors duration-200">
                         (+212) 06.38.72.56.90
+                      </a>
+                    </li>
+                    <li>
+                      <p className="text-xs text-foreground-muted mb-0.5">WhatsApp</p>
+                      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-accent transition-colors duration-200">
+                        Écrivez-nous, réponse rapide
                       </a>
                     </li>
                     <li>

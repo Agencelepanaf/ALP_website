@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieBannerWrapper from "@/components/CookieBannerWrapper";
+import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 import AnalyticsProvider from "@/components/AnalyticsProvider";
 import ContactClickTracking from "@/components/ContactClickTracking";
 import "./globals.css";
@@ -85,9 +86,11 @@ export default async function RootLayout({
                 url: "https://agencelepanaf.com",
                 logo: "https://agencelepanaf.com/logo.svg",
                 image: "https://agencelepanaf.com/og-image.png",
+                telephone: "+212638725690",
                 contactPoint: {
                   "@type": "ContactPoint",
                   email: "contact@agencelepanaf.com",
+                  telephone: "+212638725690",
                   contactType: "customer service",
                   availableLanguage: ["French", "Arabic"],
                 },
@@ -115,6 +118,7 @@ export default async function RootLayout({
             <main>{children}</main>
             <Footer />
             <CookieBannerWrapper />
+            <WhatsAppFloat />
           </>
         )}
         <AnalyticsProvider />

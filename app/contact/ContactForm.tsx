@@ -89,9 +89,9 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="flex flex-col gap-1.5">
           <label htmlFor="tel" className="text-xs font-semibold text-foreground-muted tracking-wide">
-            Téléphone <span className="text-accent">*</span>
+            Téléphone <span className="font-normal">(facultatif)</span>
           </label>
-          <input id="tel" name="tel" type="tel" required value={form.tel} onChange={handleChange} placeholder="+212 06 00 00 00 00" className={inputBase} />
+          <input id="tel" name="tel" type="tel" value={form.tel} onChange={handleChange} placeholder="+212 06 00 00 00 00" className={inputBase} />
         </div>
         <div className="flex flex-col gap-1.5">
           <label htmlFor="entreprise" className="text-xs font-semibold text-foreground-muted tracking-wide">Entreprise</label>

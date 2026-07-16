@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { WHATSAPP_URL } from "@/lib/site";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 
 const navLinks = [
   { href: "/services/presence-digitale", label: "Présence digitale" },
@@ -67,6 +69,15 @@ export default function Header() {
 
             {/* CTA desktop */}
             <div className="hidden md:flex items-center gap-3">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Écrivez-nous sur WhatsApp"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-[#25D366] text-white hover:opacity-90 active:scale-95 transition-all duration-200"
+              >
+                <WhatsAppIcon size={18} />
+              </a>
               <Link
                 href="/contact"
                 className="text-sm font-semibold bg-accent text-white hover:bg-accent-hover active:scale-95 transition-all duration-200 px-5 py-2.5 rounded-full"
@@ -136,6 +147,17 @@ export default function Header() {
           >
             Discutons du projet
           </Link>
+
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
+            className="mt-3 flex items-center justify-center gap-2.5 w-full text-base font-semibold bg-[#25D366] text-white transition-all duration-200 py-4 rounded-2xl active:scale-95"
+          >
+            <WhatsAppIcon size={20} />
+            WhatsApp direct
+          </a>
         </div>
       </div>
 
