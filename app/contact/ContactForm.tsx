@@ -51,6 +51,12 @@ export default function ContactForm() {
       if (!res.ok) throw new Error("Erreur serveur");
       setStatus("success");
       setForm(initial);
+
+      // Événement GA4 : demande envoyée avec succès (à marquer comme événement clé "generate_lead")
+      const w = window as unknown as { gtag?: (...args: unknown[]) => void };
+      if (typeof w.gtag === "function") {
+        w.gtag("event", "generate_lead", { form_id: "contact" });
+      }
     } catch {
       setStatus("error");
       setErrorMsg("Une erreur s'est produite. Contactez-nous directement à contact@agencelepanaf.com.");

@@ -10,6 +10,7 @@ import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 const navLinks = [
   { href: "/services/presence-digitale", label: "Présence digitale" },
   { href: "/services/creation-site-web", label: "Création de site" },
+  { href: "/sante", label: "Santé" },
   { href: "/realisations", label: "Réalisations" },
   { href: "/notre-methode", label: "Notre méthode" },
   { href: "/blog", label: "Blog" },
