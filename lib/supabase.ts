@@ -1,16 +1,36 @@
-import { createClient } from '@supabase/supabase-js'
-
-const supabaseUrl = process.env.SUPABASE_URL
-const supabaseKey = process.env.SUPABASE_SERVICE_KEY
-
-if (!supabaseUrl || !supabaseKey) {
-  throw new Error(
-    'Variables d\'environnement Supabase manquantes : SUPABASE_URL et SUPABASE_SERVICE_KEY sont requises.'
-  )
-}
+import { createClient, type SupabaseClient } from '@supabase/supabase-js'
 
 // Client serveur uniquement — utilise la clé service (ne jamais exposer côté client)
-export const supabase = createClient(supabaseUrl, supabaseKey)
+//
+// Instancié paresseusement : lire process.env et appeler createClient() au
+// chargement du module ferait planter `next build` dès que les variables
+// Supabase ne sont pas présentes à la compilation (ex. build self-hosted sans
+// secrets injectés), même sur des routes qui n'accèdent jamais à Supabase.
+let client: SupabaseClient | null = null
+
+function getClient(): SupabaseClient {
+  if (client) return client
+
+  const supabaseUrl = process.env.SUPABASE_URL
+  const supabaseKey = process.env.SUPABASE_SERVICE_KEY
+
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error(
+      'Variables d\'environnement Supabase manquantes : SUPABASE_URL et SUPABASE_SERVICE_KEY sont requises.'
+    )
+  }
+
+  client = createClient(supabaseUrl, supabaseKey)
+  return client
+}
+
+export const supabase = new Proxy({} as SupabaseClient, {
+  get(_target, prop) {
+    const real = getClient()
+    const value = Reflect.get(real, prop, real)
+    return typeof value === 'function' ? value.bind(real) : value
+  },
+})
 
 // ─── Types de base ─────────────────────────────────────────────────────────────
 

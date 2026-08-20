@@ -6,6 +6,9 @@ const supabaseHostname = process.env.SUPABASE_URL
   : "*.supabase.co"; // Fallback seulement si SUPABASE_URL n'est pas défini
 
 const nextConfig: NextConfig = {
+  // Build minimal auto-tracé (node_modules + server.js) — requis pour le
+  // déploiement Node.js self-hosted (Hostinger Web Apps Hosting).
+  output: "standalone",
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
