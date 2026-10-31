@@ -29,3 +29,12 @@ updates:
         update-types: ["version-update:semver-major"]
       - dependency-name: "react-dom"
         update-types: ["version-update:semver-major"]
+      # ESLint 10 casse eslint-config-next 16.4.x (le lint ne démarre plus).
+      - dependency-name: "eslint"
+        update-types: ["version-update:semver-major"]
+      # TypeScript 7 : à tester à la main avant d'adopter.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+      # Doit suivre la version de Node sur Hostinger (22), pas la dernière.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
