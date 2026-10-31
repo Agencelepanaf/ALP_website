@@ -1,72 +1,82 @@
 # Le Panaf — Site web
 
-Site officiel de l'agence Le Panaf, agence de présence digitale pour les PME et les STARTUPS ambitieuses. Basée à Casablanca, Maroc.
+Site officiel de l'agence Le Panaf, agence de présence digitale pour les PME et les startups ambitieuses. Basée à Casablanca, Maroc.
 
 ## Stack technique
 
-- **Framework** : Next.js 15 (App Router)
-- **Langage** : TypeScript
+- **Framework** : Next.js 16 (App Router) — attention, conventions différentes des versions précédentes (voir `AGENTS.md`)
+- **Langage** : TypeScript, React 19
 - **Styling** : Tailwind CSS v4
 - **Animations** : Framer Motion
-- **Hébergement** : Vercel
-- **Polices** : Inter + Instrument Serif (Google Fonts via `next/font`)
+- **Base de données** : Supabase (articles, réalisations, projet en cours)
+- **Emails** : Resend (formulaire de contact)
+- **Auth admin** : mot de passe + session JWT signée (`jose`)
+- **Analytics** : GA4 / Meta Pixel, chargés après consentement (bannière cookies)
+- **Polices** : Bangers + Luckiest Guy via `@fontsource`
+- **Hébergement** : Hostinger (Node.js, build `standalone`)
 
 ## Installation
 
 ```bash
-# Cloner le dépôt
 git clone <url-du-repo>
 cd agencelepanaf.ma
-
-# Installer les dépendances
 npm install
-
-# Copier les variables d'environnement
-cp .env.local.example .env.local
-# Renseigner les valeurs dans .env.local
-
-# Démarrer le serveur de développement
+cp .env.local.example .env.local   # puis renseigner les valeurs
 npm run dev
 ```
 
 Le site est accessible sur [http://localhost:3000](http://localhost:3000).
+
+| Script | Rôle |
+|---|---|
+| `npm run dev` | Serveur de développement |
+| `npm run build` | Build de production (`.next/standalone`) |
+| `npm run start` | Lance le build de production |
+| `npm run lint` | ESLint |
 
 ## Structure du projet
 
 ```
 agencelepanaf.ma/
 ├── app/
-│   ├── layout.tsx                        # Layout racine (Header, Footer, SEO global)
-│   ├── page.tsx                          # Page d'accueil
-│   ├── globals.css                       # Styles globaux + tokens Tailwind v4
-│   ├── sitemap.ts                        # Sitemap généré automatiquement
-│   ├── robots.ts                         # robots.txt
+│   ├── layout.tsx                 # Layout racine (Header, Footer, SEO, analytics)
+│   ├── page.tsx                   # Accueil
 │   ├── services/
-│   │   ├── presence-digitale/page.tsx    # Service présence digitale
-│   │   └── creation-site-web/page.tsx   # Service création de site web
-│   ├── methode/page.tsx                  # Page méthode de travail
-│   ├── contact/
-│   │   ├── page.tsx                      # Page contact
-│   │   └── ContactForm.tsx              # Formulaire client (form + fetch)
-│   ├── mentions-legales/page.tsx
-│   ├── politique-confidentialite/page.tsx
-│   └── api/
-│       └── contact/route.ts             # API route — log temporaire, brancher Resend
+│   │   ├── presence-digitale/     # Service présence digitale
+│   │   └── creation-site-web/     # Service création de site web
+│   ├── notre-methode/             # Méthode de travail
+│   ├── realisations/              # Liste + [slug] (études de cas, depuis Supabase)
+│   ├── blog/                      # Liste + [slug] (articles Markdown, depuis Supabase)
+│   ├── sante/                     # Page Santé
+│   ├── contact/                   # Page + formulaire (tracking GA4)
+│   ├── mentions-legales/, politique-confidentialite/
+│   ├── admin/                     # Back-office protégé
+│   │   ├── login/                 # Connexion
+│   │   ├── articles/              # Liste, nouveau, [id]
+│   │   ├── realisations/          # Liste, nouveau, [id]
+│   │   ├── projet-en-cours/
+│   │   └── actions.ts             # Server Actions
+│   ├── api/
+│   │   ├── contact/route.ts       # Envoi du formulaire via Resend
+│   │   └── admin/projet-en-cours/
+│   ├── sitemap.ts, robots.ts, not-found.tsx
+│   └── globals.css                # Tokens Tailwind v4 + styles globaux
 ├── components/
-│   ├── Header.tsx                        # Navigation sticky responsive
-│   ├── Footer.tsx                        # Footer minimaliste
-│   └── ui/
-│       ├── Button.tsx                    # Variantes primary / secondary / ghost
-│       ├── Section.tsx                   # Wrapper de section avec padding cohérent
-│       ├── RevealOnScroll.tsx            # Animation d'apparition au scroll (Framer)
-│       └── MarqueeLogos.tsx             # Placeholder logos clients (commenté)
+│   ├── Header.tsx, Footer.tsx
+│   ├── AnalyticsProvider.tsx, CookieBanner*.tsx, ContactClickTracking.jsx
+│   ├── admin/                     # Champs de formulaire admin
+│   ├── projets/                   # Grille des réalisations
+│   └── ui/                        # Button, Section, RevealOnScroll, WhatsAppFloat…
 ├── lib/
-│   └── fonts.ts                          # Import Google Fonts (Inter + Instrument Serif)
-├── public/
-│   ├── logo.svg                          # Logo version fond clair
-│   └── logo-white.svg                   # Logo version fond sombre
-├── .env.local.example                    # Exemple de variables d'environnement
-└── CONTENU.md                            # Tous les textes du site
+│   ├── auth.ts                    # Sessions JWT admin
+│   ├── supabase.ts                # Client Supabase (initialisé à la demande)
+│   ├── site.ts                    # Config du site
+│   └── fonts.ts
+├── data/                          # Scripts SQL (seed, migrations)
+├── proxy.ts                       # Protection /admin + headers (ex-middleware)
+├── next.config.ts                 # standalone, images Supabase, redirections, headers
+├── .github/dependabot.yml         # Surveillance des dépendances
+└── CONTENU.md                     # Textes du site
 ```
 
 ## Variables d'environnement
@@ -75,62 +85,59 @@ Copier `.env.local.example` en `.env.local` et renseigner :
 
 | Variable | Description | Obligatoire |
 |---|---|---|
-| `NEXT_PUBLIC_GA4_MEASUREMENT_ID` | ID Google Analytics 4 (ex: `G-XXXXXXXXXX`) | Non |
+| `NEXT_PUBLIC_GA4_MEASUREMENT_ID` | ID Google Analytics 4 (`G-XXXXXXXXXX`) | Non |
 | `NEXT_PUBLIC_META_PIXEL_ID` | ID Meta Pixel | Non |
-| `RESEND_API_KEY` | Clé API Resend pour l'envoi d'emails | À brancher |
-| `CONTACT_EMAIL_TO` | Email de réception des formulaires | À brancher |
+| `RESEND_API_KEY` | Clé API Resend | Oui (contact) |
+| `CONTACT_EMAIL_TO` | Email de réception des formulaires | Oui (contact) |
+| `SUPABASE_URL` | URL du projet Supabase | Oui |
+| `SUPABASE_SERVICE_KEY` | Clé service Supabase (serveur uniquement) | Oui |
+| `ADMIN_PASSWORD` | Mot de passe de `/admin/login` | Oui |
+| `ADMIN_JWT_SECRET` | Secret de signature des sessions (≥ 32 caractères, `openssl rand -base64 32`) | Oui |
 
-Les variables préfixées `NEXT_PUBLIC_` sont exposées côté client. Ne jamais y mettre de secrets.
+Les variables préfixées `NEXT_PUBLIC_` sont exposées côté client : ne jamais y mettre de secrets. Les variables `NEXT_PUBLIC_` sont figées au build : relancer un build après modification.
 
-## Brancher l'envoi d'emails
+## Base de données
 
-Le formulaire de contact envoie les données vers `/api/contact/route.ts`. Actuellement, les données sont seulement loggées. Pour activer l'envoi d'emails :
+Les scripts de `data/` s'exécutent dans l'éditeur SQL de Supabase :
+- `seed.sql` — schéma et données initiales
+- `migrate-articles.sql`, `migrate-etude-de-cas.sql` — migrations
+- `seed-pnrtaxi.sql` — exemple d'étude de cas
 
-1. Installer Resend : `npm install resend`
-2. Ouvrir `app/api/contact/route.ts`
-3. Suivre les instructions dans les commentaires du fichier
+Les images sont servies depuis le Storage public Supabase (hostname restreint dans `next.config.ts`).
 
-## Déploiement sur Vercel
+## Déploiement (Hostinger Node.js)
 
-```bash
-# Installer Vercel CLI
-npm i -g vercel
+Le build utilise `output: "standalone"` : `next build` génère un `server.js` minimal dans `.next/standalone`.
 
-# Déployer
-vercel
+1. Connecter le dépôt GitHub dans hPanel (déploiement auto sur push de `master`)
+2. Commande de build : `npm run build` — démarrage : `npm run start`
+3. Renseigner toutes les variables d'environnement dans hPanel, puis relancer un build
 
-# Configurer les variables d'environnement dans le dashboard Vercel
-# Project Settings > Environment Variables
-```
+## Administration
 
-Ou connecter le dépôt GitHub directement dans le dashboard Vercel pour le CI/CD automatique.
-
-### Domaine personnalisé
-
-1. Dans Vercel Dashboard → Project → Settings → Domains
-2. Ajouter `lepanaf.com` et `www.lepanaf.com`
-3. Configurer les DNS chez votre registrar selon les instructions Vercel
+`/admin` est protégé par `proxy.ts` : sans session valide, redirection vers `/admin/login`. On y gère les articles du blog, les réalisations et le bloc « projet en cours ».
 
 ## Modifier le contenu
 
-Tous les textes sont centralisés dans `CONTENU.md`. Les textes dans le code sont directement dans les fichiers de pages — chercher dans `app/` pour localiser un texte précis.
+Les textes de référence sont dans `CONTENU.md` ; les textes affichés sont dans les pages de `app/`. Articles et réalisations se gèrent depuis l'admin.
 
 ## Performance
 
-Cible Lighthouse : 90+ sur tous les axes (Performance, Accessibilité, Bonnes pratiques, SEO).
-
-Points d'attention :
-- Toujours utiliser `next/image` pour les images
-- Utiliser `RevealOnScroll` avec parcimonie (éviter d'animer plus de 6 éléments par section)
-- Les polices sont chargées via `next/font` — pas d'import CSS externe
+Cible Lighthouse : 90+ sur tous les axes.
+- Toujours utiliser `next/image`
+- `RevealOnScroll` avec parcimonie (6 éléments animés max par section)
 
 ## Identité visuelle
 
+Tokens définis dans `app/globals.css` :
+
 | Token | Valeur | Usage |
 |---|---|---|
-| `background` | `#FAFAF7` | Fond principal |
-| `foreground` | `#0F0F0E` | Texte principal |
-| `accent-terra` | `#C8553D` | Accent primaire, CTA |
+| `background` | `#F5F5F0` | Fond principal |
+| `surface` | `#FFFFFF` | Cartes, blocs |
+| `foreground` | `#0D0D0D` | Texte principal |
+| `foreground-muted` | `#5C5C5A` | Texte secondaire |
+| `accent` | `#C8553D` | Accent primaire, CTA |
 | `accent-green` | `#2D4A3E` | Accent secondaire |
-| `gray-muted` | `#6B6B68` | Texte secondaire |
-| `gray-border` | `#D4D4CE` | Bordures |
+| `dark` | `#111110` | Sections sombres |
+| `border` | `#E2E2DC` | Bordures |

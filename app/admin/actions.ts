@@ -63,6 +63,7 @@ function timingSafeEqual(a: string, b: string): boolean {
     // On compare quand même pour consommer du temps
     let diff = 0
     for (let i = 0; i < bufA.length; i++) diff |= bufA[i] ^ (bufB[i % bufB.length] ?? 0)
+    void diff // résultat volontairement ignoré
     return false
   }
   let diff = 0
