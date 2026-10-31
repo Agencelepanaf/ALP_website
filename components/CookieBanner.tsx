@@ -1,25 +1,36 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
 import Button from "@/components/ui/Button";
 
-export default function CookieBanner() {
-  const [visible, setVisible] = useState(false);
+// Le choix est lu dans localStorage ; on se réabonne à l'événement émis
+// par accept/refuse (et aux autres onglets via "storage").
+function subscribe(callback: () => void) {
+  window.addEventListener("cookie-consent", callback);
+  window.addEventListener("storage", callback);
+  return () => {
+    window.removeEventListener("cookie-consent", callback);
+    window.removeEventListener("storage", callback);
+  };
+}
 
-  useEffect(() => {
-    if (!localStorage.getItem("cookie_consent")) setVisible(true);
-  }, []);
+export default function CookieBanner() {
+  // Côté serveur : "unknown" pour ne rien afficher avant l'hydratation.
+  const consent = useSyncExternalStore(
+    subscribe,
+    () => localStorage.getItem("cookie_consent"),
+    () => "unknown"
+  );
+  const visible = consent === null;
 
   function accept() {
     localStorage.setItem("cookie_consent", "accepted");
     window.dispatchEvent(new CustomEvent("cookie-consent", { detail: "accepted" }));
-    setVisible(false);
   }
 
   function refuse() {
     localStorage.setItem("cookie_consent", "refused");
     window.dispatchEvent(new CustomEvent("cookie-consent", { detail: "refused" }));
-    setVisible(false);
   }
 
   if (!visible) return null;
