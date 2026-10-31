@@ -1,0 +1,31 @@
+# Surveillance automatique des dépendances du site.
+# Dependabot propose chaque mois les mises à jour sous forme de pull requests,
+# et immédiatement les correctifs de sécurité.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      day: "monday"
+      time: "08:00"
+      timezone: "Africa/Casablanca"
+    open-pull-requests-limit: 5
+    groups:
+      # Mises à jour mineures et correctifs regroupés en une seule PR
+      mineures:
+        update-types:
+          - "minor"
+          - "patch"
+      # Outils de vérification de code (non exposés aux visiteurs)
+      outils-dev:
+        dependency-type: "development"
+    ignore:
+      # Les montées de version majeures de Next.js et React se font à la main,
+      # après lecture des notes de migration.
+      - dependency-name: "next"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major"]
