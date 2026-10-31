@@ -30,7 +30,7 @@ Le site est accessible sur [http://localhost:3000](http://localhost:3000).
 | Script | Rôle |
 |---|---|
 | `npm run dev` | Serveur de développement |
-| `npm run build` | Build de production (`.next/standalone`) |
+| `npm run build` | Build de production avec Webpack (`.next/standalone`) |
 | `npm run start` | Lance le build de production |
 | `npm run lint` | ESLint |
 
@@ -74,7 +74,7 @@ agencelepanaf.ma/
 │   └── fonts.ts
 ├── data/                          # Scripts SQL (seed, migrations)
 ├── proxy.ts                       # Protection /admin + headers (ex-middleware)
-├── next.config.ts                 # standalone, images Supabase, redirections, headers
+├── next.config.mjs                # standalone, images Supabase, redirections, headers
 ├── .github/dependabot.yml         # Surveillance des dépendances
 └── CONTENU.md                     # Textes du site
 ```
@@ -111,7 +111,8 @@ Le build utilise `output: "standalone"` : `next build` génère un `server.js` m
 
 1. Connecter le dépôt GitHub dans hPanel (déploiement auto sur push de `master`)
 2. Commande de build : `npm run build` — démarrage : `npm run start`
-3. Renseigner toutes les variables d'environnement dans hPanel, puis relancer un build
+3. Le build utilise Webpack (`next build --webpack`) et `next.config.mjs` : la glibc du serveur est trop ancienne pour le SWC natif, et Turbopack ne fonctionne pas avec le repli WebAssembly. Ne pas repasser à Turbopack ni à `next.config.ts`.
+4. Renseigner toutes les variables d'environnement dans hPanel, puis relancer un build
 
 ## Administration
 

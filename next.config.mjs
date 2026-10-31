@@ -1,11 +1,14 @@
-import type { NextConfig } from "next";
 
 // Récupérer le hostname Supabase depuis les variables d'env pour restreindre remotePatterns
 const supabaseHostname = process.env.SUPABASE_URL
   ? new URL(process.env.SUPABASE_URL).hostname
   : "*.supabase.co"; // Fallback seulement si SUPABASE_URL n'est pas défini
 
-const nextConfig: NextConfig = {
+// Fichier en .mjs (et non .ts) : sur Hostinger, la glibc est trop ancienne pour
+// le binaire SWC natif et le repli WebAssembly n'arrive pas à charger un
+// next.config.ts. Un fichier JS est chargé directement par Node, sans transpilation.
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   // Build minimal auto-tracé (node_modules + server.js) — requis pour le
   // déploiement Node.js self-hosted (Hostinger Web Apps Hosting).
   output: "standalone",
